@@ -6,15 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020/9 | 努力的小渣渣</title>
+  <title>Docker | 努力的小渣渣</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="努力的小渣渣">
-<meta property="og:url" content="http://example.com/archives/2020/09/index.html">
+  <meta name="description" content="1.Docker入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="http://example.com/2020/09/18/Docker/index.html">
 <meta property="og:site_name" content="努力的小渣渣">
+<meta property="og:description" content="1.Docker入门">
 <meta property="og:locale">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/exit.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/bin.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/%E5%91%BD%E4%BB%A4.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/%E5%91%BD%E4%BB%A42.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/tomcat,ubuntu.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/%E9%95%9C%E5%83%8F%E5%88%86%E5%B1%82.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B72.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker-zookeeper.png">
+<meta property="article:published_time" content="2020-09-18T07:40:53.000Z">
+<meta property="article:modified_time" content="2020-09-18T08:09:42.009Z">
 <meta property="article:author" content="new">
+<meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker%E5%8E%9F%E7%90%86.png">
   
     <link rel="alternative" href="/atom.xml" title="努力的小渣渣" type="application/atom+xml">
   
@@ -157,35 +173,468 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-Docker" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/18/Docker/" class="archive-article-date">
-  	<time datetime="2020-09-18T07:40:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/18/Docker/">Docker</a>
+    <h1 class="article-title" itemprop="name">
+      Docker
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/09/18/Docker/" class="archive-article-date">
+  	<time datetime="2020-09-18T07:40:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Docker入门"><a href="#1-Docker入门" class="headerlink" title="1.Docker入门"></a>1.Docker入门</h1><a id="more"></a>
+
+<h2 id="1-Docker简介"><a href="#1-Docker简介" class="headerlink" title="1.Docker简介"></a>1.Docker简介</h2><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
+<p>解决了运行环境和配置问题软件容器，方便做持续集成并有助于整体发布的容器虚拟化技术。</p>
+<h2 id="2-Docker的基本组成"><a href="#2-Docker的基本组成" class="headerlink" title="2.Docker的基本组成"></a>2.Docker的基本组成</h2><h3 id="1-镜像"><a href="#1-镜像" class="headerlink" title="1.镜像"></a>1.镜像</h3><p>Docker镜像（ Image）就是一个只读的模板。镜像可以用来创建 Docker容器，个镜像可以创建很多容器</p>
+<h3 id="2-容器"><a href="#2-容器" class="headerlink" title="2.容器"></a>2.容器</h3><p>Docker利用容器（ Container）独立运行的一个或一组应用。容器是用镜像创建的运行实例。</p>
+<p>它可以被启动、开始、停止、删除。每个容器都是相互隔离的、保证安全的平台。</p>
+<p>可以把容器看做是一个简易版的Linux环境（包括root用户权限、进程空间、用户空间和网络空间等和运行在其中的应用程序。</p>
+<p>容器的定义和镜像几乎一模一样，也是一堆层的统一视角，唯一区别在于容器的最上面那一层是可读可写的。</p>
+<h3 id="3-仓库"><a href="#3-仓库" class="headerlink" title="3.仓库"></a>3.仓库</h3><p>仓库（ Repository）是集中存放镜像文件的场所。</p>
+<p>仓库（ Repository）和仓库注册服务器（ Registry）是有区别的。仓库注册服务器上往往存放着多个仓库，每个仓库中又包含了多个镜像，每个镜像有不同的标签（tag）。</p>
+<p>仓库分为公开仓库（ Public）和私有仓库（ Private）两种形式。</p>
+<p>最大的公开仓库是 Docker hub（htps:// hub.docker. com/）。存放了数量庞大的镜像供用户下载。国内的公开仓库包括阿里云、网易云等。</p>
+<h3 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h3><p>Docker本身是一个容器运行载体或称之为管理引擎。我们把应用程序和配置依赖打包好形成一个可交付的运行环境，这个打包好的运行环境就似乎 image镜像文件。只有通过这个镜像文件才能生成 Docker容器。 Image文件可以看作是容器的模板。D.cker根据 Image文件生成容器的实例。同一个 Image文件，可以生成多个同时运行的容器实例。</p>
+<p>Image文件生成的容器实例，本身也是一个文件，称为镜像文件。</p>
+<p>一个容器运行一种服务，当我们需要的时候，就可以通过 docke客户端创建一个对应的运行实例，也就是我们的容器。</p>
+<p>至于仓储，就是放了一堆镜像的地方，我们可以把镜像发布到仓储中，需要的时候从仓储中拉下来就可以了。</p>
+<h2 id="3-Docker安装"><a href="#3-Docker安装" class="headerlink" title="3.Docker安装"></a>3.Docker安装</h2><h3 id="1-Docker安装"><a href="#1-Docker安装" class="headerlink" title="1.Docker安装"></a>1.Docker安装</h3><p>不同系统，不同版本不一定相同，以下以CentOS8为例（参考自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ding2016/p/11592999.html">Adrian·Ding博客</a>）</p>
+<p>其他系统/版本可参考<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">Docker官方文档</a></p>
+<p>1.下载docker-ce的repo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo -o &#x2F;etc&#x2F;yum.repos.d&#x2F;docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2.安装依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;fedora&#x2F;30&#x2F;x86_64&#x2F;stable&#x2F;Packages&#x2F;containerd.io-1.2.6-3.3.fc30.x86_64.rpm</span><br></pre></td></tr></table></figure>
+
+
+
+<p>3.安装docker-ce</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-ce</span><br></pre></td></tr></table></figure>
+
+
+
+<p>4.启动Docker服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+
+
+
+<p>5.查看安装版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+
+
+
+<p>6.设置开机启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>7.完整安装过程</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line">******************************************步骤一********************************************************</span><br><span class="line">[root@localhost ~]# curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo</span><br><span class="line"><span class="meta">  %</span><span class="bash"> Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span></span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100  2424  100  2424    0     0   2042      0  0:00:01  0:00:01 --:--:--  2042</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">******************************************步骤二********************************************************</span><br><span class="line">[root@localhost ~]# yum install https://download.docker.com/linux/fedora/30/x86_64/stable/Packages/containerd.io-1.2.6-3.3.fc30.x86_64.rpm</span><br><span class="line">Docker CE Stable - x86_64                       8.9 kB/s |  25 kB     00:02    </span><br><span class="line">containerd.io-1.2.6-3.3.fc30.x86_64.rpm         857 kB/s |  21 MB     00:25    </span><br><span class="line">依赖关系解决。</span><br><span class="line">================================================================================</span><br><span class="line"> 软件包              架构         版本                 仓库                大小</span><br><span class="line">================================================================================</span><br><span class="line">安装:</span><br><span class="line"> containerd.io       x86_64       1.2.6-3.3.fc30       @commandline        21 M</span><br><span class="line">     替换  runc.x86_64 1.0.0-64.rc9.module_el8.1.0+298+41f9343a</span><br><span class="line"></span><br><span class="line">事务概要</span><br><span class="line">================================================================================</span><br><span class="line">安装  1 软件包</span><br><span class="line"></span><br><span class="line">总计：21 M</span><br><span class="line">确定吗？[y/N]： y</span><br><span class="line">下载软件包：</span><br><span class="line">运行事务检查</span><br><span class="line">事务检查成功。</span><br><span class="line">运行事务测试</span><br><span class="line">事务测试成功。</span><br><span class="line">运行事务</span><br><span class="line">  准备中  :                                                                 1/1 </span><br><span class="line">  安装    : containerd.io-1.2.6-3.3.fc30.x86_64                             1/2 </span><br><span class="line">  运行脚本: containerd.io-1.2.6-3.3.fc30.x86_64                             1/2 </span><br><span class="line">  废弃    : runc-1.0.0-64.rc9.module_el8.1.0+298+41f9343a.x86_64            2/2 </span><br><span class="line">  运行脚本: runc-1.0.0-64.rc9.module_el8.1.0+298+41f9343a.x86_64            2/2 </span><br><span class="line">  验证    : containerd.io-1.2.6-3.3.fc30.x86_64                             1/2 </span><br><span class="line">  验证    : runc-1.0.0-64.rc9.module_el8.1.0+298+41f9343a.x86_64            2/2 </span><br><span class="line"></span><br><span class="line">已安装:</span><br><span class="line">  containerd.io-1.2.6-3.3.fc30.x86_64                                           </span><br><span class="line"></span><br><span class="line">完毕！</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">******************************************步骤三********************************************************</span><br><span class="line">[root@localhost ~]# yum install docker-ce</span><br><span class="line">上次元数据过期检查：0:01:01 前，执行于 2020年06月25日 星期四 09时41分39秒。</span><br><span class="line">依赖关系解决。</span><br><span class="line">================================================================================</span><br><span class="line"> 软件包            架构       版本                   仓库                  大小</span><br><span class="line">================================================================================</span><br><span class="line">安装:</span><br><span class="line"> docker-ce         x86_64     3:19.03.12-3.el7       docker-ce-stable      24 M</span><br><span class="line">安装依赖关系:</span><br><span class="line"> libcgroup         x86_64     0.41-19.el8            BaseOS                70 k</span><br><span class="line"> docker-ce-cli     x86_64     1:19.03.12-3.el7       docker-ce-stable      38 M</span><br><span class="line"></span><br><span class="line">事务概要</span><br><span class="line">================================================================================</span><br><span class="line">安装  3 软件包</span><br><span class="line"></span><br><span class="line">总下载：62 M</span><br><span class="line">安装大小：263 M</span><br><span class="line">确定吗？[y/N]： y</span><br><span class="line">下载软件包：</span><br><span class="line">(1/3): libcgroup-0.41-19.el8.x86_64.rpm         355 kB/s |  70 kB     00:00    </span><br><span class="line">(2/3): docker-ce-19.03.12-3.el7.x86_64.rpm      813 kB/s |  24 MB     00:30    </span><br><span class="line">(3/3): docker-ce-cli-19.03.12-3.el7.x86_64.rpm  1.1 MB/s |  38 MB     00:33    </span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">总计                                            1.8 MB/s |  62 MB     00:34     </span><br><span class="line">警告：/var/cache/dnf/docker-ce-stable-091d8a9c23201250/packages/docker-ce-19.03.12-3.el7.x86_64.rpm: 头V4 RSA/SHA512 Signature, 密钥 ID 621e9f35: NOKEY</span><br><span class="line">Docker CE Stable - x86_64                       946  B/s | 1.6 kB     00:01    </span><br><span class="line">导入 GPG 公钥 0x621E9F35:</span><br><span class="line"> Userid: &quot;Docker Release (CE rpm) &lt;docker@docker.com&gt;&quot;</span><br><span class="line"> 指纹: 060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35</span><br><span class="line"> 来自: https://download.docker.com/linux/centos/gpg</span><br><span class="line">确定吗？[y/N]： y</span><br><span class="line">导入公钥成功</span><br><span class="line">运行事务检查</span><br><span class="line">事务检查成功。</span><br><span class="line">运行事务测试</span><br><span class="line">事务测试成功。</span><br><span class="line">运行事务</span><br><span class="line">  准备中  :                                                                 1/1 </span><br><span class="line">  安装    : docker-ce-cli-1:19.03.12-3.el7.x86_64                           1/3 </span><br><span class="line">  运行脚本: docker-ce-cli-1:19.03.12-3.el7.x86_64                           1/3 </span><br><span class="line">  运行脚本: libcgroup-0.41-19.el8.x86_64                                    2/3 </span><br><span class="line">  安装    : libcgroup-0.41-19.el8.x86_64                                    2/3 </span><br><span class="line">  运行脚本: libcgroup-0.41-19.el8.x86_64                                    2/3 </span><br><span class="line">  安装    : docker-ce-3:19.03.12-3.el7.x86_64                               3/3 </span><br><span class="line">  运行脚本: docker-ce-3:19.03.12-3.el7.x86_64                               3/3 </span><br><span class="line">  验证    : libcgroup-0.41-19.el8.x86_64                                    1/3 </span><br><span class="line">  验证    : docker-ce-3:19.03.12-3.el7.x86_64                               2/3 </span><br><span class="line">  验证    : docker-ce-cli-1:19.03.12-3.el7.x86_64                           3/3 </span><br><span class="line"></span><br><span class="line">已安装:</span><br><span class="line">  docker-ce-3:19.03.12-3.el7.x86_64           libcgroup-0.41-19.el8.x86_64      </span><br><span class="line">  docker-ce-cli-1:19.03.12-3.el7.x86_64      </span><br><span class="line"></span><br><span class="line">完毕！</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">******************************************步骤四********************************************************</span><br><span class="line">[root@localhost ~]# systemctl start docker</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">******************************************步骤五********************************************************</span><br><span class="line">[root@localhost ~]# docker version</span><br><span class="line">Client: Docker Engine - Community</span><br><span class="line"> Version:           19.03.12</span><br><span class="line"> API version:       1.40</span><br><span class="line"> Go version:        go1.13.10</span><br><span class="line"> Git commit:        48a66213fe</span><br><span class="line"> Built:             Mon Jun 22 15:46:54 2020</span><br><span class="line"> OS/Arch:           linux/amd64</span><br><span class="line"> Experimental:      false</span><br><span class="line"></span><br><span class="line">Server: Docker Engine - Community</span><br><span class="line"> Engine:</span><br><span class="line">  Version:          19.03.12</span><br><span class="line">  API version:      1.40 (minimum version 1.12)</span><br><span class="line">  Go version:       go1.13.10</span><br><span class="line">  Git commit:       48a66213fe</span><br><span class="line">  Built:            Mon Jun 22 15:45:28 2020</span><br><span class="line">  OS/Arch:          linux/amd64</span><br><span class="line">  Experimental:     false</span><br><span class="line"> containerd:</span><br><span class="line">  Version:          1.2.6</span><br><span class="line">  GitCommit:        894b81a4b802e4eb2a91d1ce216b8817763c29fb</span><br><span class="line"> runc:</span><br><span class="line">  Version:          1.0.0-rc8</span><br><span class="line">  GitCommit:        425e105d5a03fabd737a126ad93d62a9eeede87f</span><br><span class="line"> docker-init:</span><br><span class="line">  Version:          0.18.0</span><br><span class="line">  GitCommit:        fec3683</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-配置阿里云镜像"><a href="#2-配置阿里云镜像" class="headerlink" title="2.配置阿里云镜像"></a>2.配置阿里云镜像</h3><p>原因： <a target="_blank" rel="noopener" href="https://hub.docker.com/">Docker仓库</a>是一个外国网址，国内访问速度慢，所以使用阿里云或网易云。</p>
+<p>参考<a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">阿里云官方文档</a></p>
+<p>1.通过修改daemon配置文件/etc/docker/daemon.json来使用加速器</p>
+<p>非root模式下需要使用sudo获取权限，root模式下可以省略sudo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p &#x2F;etc&#x2F;docker</span><br><span class="line">sudo tee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;-&#39;EOF&#39;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;7rnfy9qt.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2.完整示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost docker]# mkdir -p &#x2F;etc&#x2F;docker</span><br><span class="line">[root@localhost docker]# tee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;-&#39;EOF&#39;</span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt;   &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;7rnfy9qt.mirror.aliyuncs.com&quot;]</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; EOF</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;7rnfy9qt.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost docker]# ll</span><br><span class="line">总用量 8</span><br><span class="line">-rw-r--r--. 1 root root  67 6月  25 10:00 daemon.json</span><br><span class="line">-rw-------. 1 root root 244 6月  25 09:44 key.json</span><br><span class="line">[root@localhost docker]# vim daemon.json</span><br><span class="line">[root@localhost docker]# systemctl daemon-reload</span><br><span class="line">[root@localhost docker]# systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-测试Docker"><a href="#3-测试Docker" class="headerlink" title="3.测试Docker"></a>3.测试Docker</h3><p>运行hello-world</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost docker]# docker run hello-world</span><br><span class="line">******************************************本地未找到，从仓库获取************************************************</span><br><span class="line">Unable to find image &#39;hello-world:latest&#39; locally</span><br><span class="line">latest: Pulling from library&#x2F;hello-world</span><br><span class="line">0e03bdcc26d7: Pull complete </span><br><span class="line">Digest: sha256:d58e752213a51785838f9eed2b7a498ffa1cb3aa7f946dda11af39286c3db9a9</span><br><span class="line">Status: Downloaded newer image for hello-world:latest</span><br><span class="line"></span><br><span class="line">**********************************************运行成功*******************************************************</span><br><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br><span class="line"></span><br><span class="line">To generate this message, Docker took the following steps:</span><br><span class="line"> 1. The Docker client contacted the Docker daemon.</span><br><span class="line"> 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.</span><br><span class="line">    (amd64)</span><br><span class="line"> 3. The Docker daemon created a new container from that image which runs the</span><br><span class="line">    executable that produces the output you are currently reading.</span><br><span class="line"> 4. The Docker daemon streamed that output to the Docker client, which sent it</span><br><span class="line">    to your terminal.</span><br><span class="line"></span><br><span class="line">To try something more ambitious, you can run an Ubuntu container with:</span><br><span class="line"> $ docker run -it ubuntu bash</span><br><span class="line"></span><br><span class="line">Share images, automate workflows, and more with a free Docker ID:</span><br><span class="line"> https:&#x2F;&#x2F;hub.docker.com&#x2F;</span><br><span class="line"></span><br><span class="line">For more examples and ideas, visit:</span><br><span class="line"> https:&#x2F;&#x2F;docs.docker.com&#x2F;get-started&#x2F;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-原理"><a href="#4-原理" class="headerlink" title="4.原理"></a>4.原理</h3><p>Docker是一个cient- Server结构的系统， Docker守护进程运行在主机上，然后通过 Socket连接从客户端访问，守护进程从客户端接受<br>命令并管理运行在主机上的容器。容器，是一个运行时环境，就是我们前面说到的集装箱。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker%E5%8E%9F%E7%90%86.png"></p>
+<h1 id="2-常用命令"><a href="#2-常用命令" class="headerlink" title="2.常用命令"></a>2.常用命令</h1><h2 id="1-帮助命令"><a href="#1-帮助命令" class="headerlink" title="1.帮助命令"></a>1.帮助命令</h2><p>1.查看版本信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+
+<p>2.查看docker信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info </span><br></pre></td></tr></table></figure>
+
+<p>3.命令帮助</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker --help</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="2-镜像命令"><a href="#2-镜像命令" class="headerlink" title="2.镜像命令"></a>2.镜像命令</h2><h3 id="1-列出本地镜像"><a href="#1-列出本地镜像" class="headerlink" title="1.列出本地镜像"></a>1.列出本地镜像</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+
+
+<p>同一仓库源可以有多个TAG，代表这个仓库源的不同个版本，我们使用 REPOSITORY：TAG来定义不同的镜像。如果你不指定一个镜像的版本标签，例如你只使用 ubuntu， docker将默认使用 ubuntu： latest镜像</p>
+<p><strong>参数</strong></p>
+<p>1.-a列出本地所有镜像（含中间映像层）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image -a</span><br></pre></td></tr></table></figure>
+
+<p>2.-q只显示镜像ID</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image -q</span><br></pre></td></tr></table></figure>
+
+<p>3.–digests:显示镜像的摘要信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image --digests</span><br></pre></td></tr></table></figure>
+
+<p>4.–no-trunc:显示完整的镜像信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image --no-trunc</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> images.png)</p>
+<h3 id="2-查找镜像"><a href="#2-查找镜像" class="headerlink" title="2.查找镜像"></a>2.查找镜像</h3><p>从hub.docker.com中寻找镜像</p>
+<p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search 镜像名字</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>参数</strong></p>
+<p>1.-s:列出收藏数不小于某值的镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search -s 30 镜像名字</span><br></pre></td></tr></table></figure>
+
+<p>2.–no-trunc:显示完整的镜像信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search --no-trunc 镜像名字</span><br></pre></td></tr></table></figure>
+
+<p>3.–automated:只列出automated build类型的镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search --automated 镜像名字</span><br></pre></td></tr></table></figure>
+
+
+
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> search.png)</p>
+<h3 id="3-下载镜像"><a href="#3-下载镜像" class="headerlink" title="3.下载镜像"></a>3.下载镜像</h3><p>从仓库中下载镜像，默认为官方仓库，配置阿里云后，从阿里云仓库下载</p>
+<p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull 镜像名字 [:TAG]   默认下载最新版docker pull 镜像名字:latest</span><br></pre></td></tr></table></figure>
+
+
+
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> pull.png)</p>
+<h3 id="4-删除镜像"><a href="#4-删除镜像" class="headerlink" title="4.删除镜像"></a>4.删除镜像</h3><p>从本地库中删除某个镜像</p>
+<p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi 镜像名[:TAG]&#x2F;镜像ID      默认下载最新版docker rmi 镜像名字:latest</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>参数</strong></p>
+<p>1.-f:强制删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f 镜像名&#x2F;镜像ID	</span><br></pre></td></tr></table></figure>
+
+<p>2.删除多个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi 镜像1名&#x2F;镜像1ID	镜像2名&#x2F;镜像2ID</span><br></pre></td></tr></table></figure>
+
+<p>3.$():删除全部</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi  -f $(docker image -qa)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>![docker rmi](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> rm.png)</p>
+<h3 id="5-提交镜像"><a href="#5-提交镜像" class="headerlink" title="5.提交镜像"></a>5.提交镜像</h3><p>提交容器副本，使之成为一个新的镜像。</p>
+<p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit -a&#x3D;&quot;作者&quot; -m&#x3D;&quot;注释&quot; 容器ID 镜像名:TAG</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="6-创建镜像"><a href="#6-创建镜像" class="headerlink" title="6.创建镜像"></a>6.创建镜像</h3><p>根据DockerFile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -f Dockerfile文件绝对路径 -t 镜像名 .</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>6.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="3-容器命令"><a href="#3-容器命令" class="headerlink" title="3.容器命令"></a>3.容器命令</h2><h3 id="1-新建并启动容器"><a href="#1-新建并启动容器" class="headerlink" title="1.新建并启动容器"></a>1.新建并启动容器</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run [OPTIONS] 镜像ID&#x2F;镜像名 [COMMAND] [ARG..]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>参数OPTIONS</strong></p>
+<p>1.–name 容器新名字：为容器指定一个名称；</p>
+<p>2.-d：后台运行容器，并返回容器ID，也即启动守护式容器；</p>
+<pre><code>&gt;使用镜像 centos： atest以后台模式启动一个容器
+&gt;docker run-d centos
+&gt;问题：然后 docker ps-a进行查看，会发现容器已经退出
+&gt;很重要的要说明的一点： Docker容器后台运行，就必须有一个前台进程
+&gt;容器运行的命令如果不是那些一直挂起的命令（比如运行top，ta），就是会自动退出的。
+&gt;这个是 docker的机制问题，比如你的web容器我们以 ngInx为例，正常情况下，我们配置启动服务只需要启动响应的 service即可。例如
+&gt;service nginx start
+&gt;但是，这样做， ngInX为后台进程模式运行，就导致 docker前台没有运行的应用，
+&gt;这样的容器后台启动后，会立即自杀因为他觉得他没事可做了。
+&gt;所以，最佳的解决方案是，将你要运行的程序以前台进程的形式运行</code></pre>
+<p>3.-i：以交互模式运行容器，通常与-t同时使用；</p>
+<p>4.-t：为容器重新分配一个伪输入终端，通常与-i同时使用；</p>
+<p>5.-P：随机端口映射；</p>
+<p>6.-p：指定端口映射（某些镜像运行需要分配端口号）有以下四种格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8888:8080 tomcat</span><br><span class="line">其中8888是要使用访问的端口，8080是tomcat容器中指定的端口</span><br></pre></td></tr></table></figure>
+
+<p>ip:hostPort containerPort<br>ip::containerPort<br>hostPort:containerPort<br>containerPort</p>
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> run.png)</p>
+<h3 id="2-列出当前所有运行中的容器"><a href="#2-列出当前所有运行中的容器" class="headerlink" title="2.列出当前所有运行中的容器"></a>2.列出当前所有运行中的容器</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps [OPTIONS]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>参数</strong></p>
+<p>1.-a：列出当前所有正在运行的容器+历史上运行过的。</p>
+<p>2.-l：显示最近创建的容器。</p>
+<p>3.-n：显示最近n个创建的容器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -n 数字</span><br></pre></td></tr></table></figure>
+
+<p>4.-q：静默模式，只显示容器编号。</p>
+<p>5.–no-trunc：不截断输出。</p>
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> ps.png)</p>
+<h3 id="3-退出容器"><a href="#3-退出容器" class="headerlink" title="3.退出容器"></a>3.退出容器</h3><p><strong>方法一：</strong>容器停止退出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>方法二：</strong>容器不停止退出</p>
+<p>Ctrl+P+Q</p>
+<p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/exit.png"></p>
+<p>![](G:\笔记\Docker\图片\Ctrl P Q.png)</p>
+<h3 id="4-启动容器"><a href="#4-启动容器" class="headerlink" title="4.启动容器"></a>4.启动容器</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker star 容器ID或容器名</span><br></pre></td></tr></table></figure>
+
+
+
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> start.png)</p>
+<h3 id="5-重启容器"><a href="#5-重启容器" class="headerlink" title="5.重启容器"></a>5.重启容器</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restar 容器ID或容器名</span><br></pre></td></tr></table></figure>
+
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> restart.png)</p>
+<h3 id="6-停止容器"><a href="#6-停止容器" class="headerlink" title="6.停止容器"></a>6.停止容器</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器ID或容器名</span><br></pre></td></tr></table></figure>
+
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> stop.png)</p>
+<h3 id="7-强制停止容器"><a href="#7-强制停止容器" class="headerlink" title="7.强制停止容器"></a>7.强制停止容器</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker kill 容器ID或容器名</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="8-删除已停止容器"><a href="#8-删除已停止容器" class="headerlink" title="8.删除已停止容器"></a>8.删除已停止容器</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器ID或容器名</span><br></pre></td></tr></table></figure>
+
+<p>![](G:\笔记\Docker\图片\docker rm.png)</p>
+<h3 id="9-删除多个容器"><a href="#9-删除多个容器" class="headerlink" title="9.删除多个容器"></a>9.删除多个容器</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">方法一</span><br><span class="line">docker rm -f $(docker ps -a -q)</span><br><span class="line">方法二</span><br><span class="line">docker ps -a -q | xargs docker rm</span><br></pre></td></tr></table></figure>
+
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/rm">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/rm</a> all.png)</p>
+<h3 id="10-查看容器日志"><a href="#10-查看容器日志" class="headerlink" title="10.查看容器日志"></a>10.查看容器日志</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f -t --tail 数字 容器ID</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<p>1.-f：跟随最新的日志打印</p>
+<p>2.-t：加入时间戳</p>
+<p>3.–tail 数字：显示最后几条日志</p>
+<h3 id="11-查看容器内的进程"><a href="#11-查看容器内的进程" class="headerlink" title="11.查看容器内的进程"></a>11.查看容器内的进程</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker top 容器ID</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="12-查看容器内部细节"><a href="#12-查看容器内部细节" class="headerlink" title="12.查看容器内部细节"></a>12.查看容器内部细节</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect 容器ID</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="13-进入正在运行的容器并以命令行交互"><a href="#13-进入正在运行的容器并以命令行交互" class="headerlink" title="13.进入正在运行的容器并以命令行交互"></a>13.进入正在运行的容器并以命令行交互</h3><p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">方法一：直接进入容器启动命令的终端，不会启动新的的进程</span><br><span class="line">docker exec -it 容器ID bashShell（容器中的命令）</span><br><span class="line">方式二：在容器中打开新的终端，并且可以启动新的进程</span><br><span class="line">docker attach 容器ID</span><br></pre></td></tr></table></figure>
+
+
+
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/attach">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/attach</a> exec.png)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/bin.png"></p>
+<h3 id="14-从容器内拷贝数据到主机"><a href="#14-从容器内拷贝数据到主机" class="headerlink" title="14.从容器内拷贝数据到主机"></a>14.从容器内拷贝数据到主机</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp 容器ID:容器内路径 目的主机路径</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="15宿主机目录挂载到容器的目录"><a href="#15宿主机目录挂载到容器的目录" class="headerlink" title="15宿主机目录挂载到容器的目录"></a>15宿主机目录挂载到容器的目录</h3><p><strong>docker容器数据卷</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -v 宿主机目录:容器目录 镜像名</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-其他命令"><a href="#4-其他命令" class="headerlink" title="4.其他命令"></a>4.其他命令</h2><p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/%E5%91%BD%E4%BB%A4.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/%E5%91%BD%E4%BB%A42.png"></p>
+<h1 id="3-Docker镜像"><a href="#3-Docker镜像" class="headerlink" title="3.Docker镜像"></a>3.Docker镜像</h1><h2 id="1-镜像简介"><a href="#1-镜像简介" class="headerlink" title="1.镜像简介"></a>1.镜像简介</h2><p>​        镜像是一种轻量级、可执行的独立软件包，用来打包软件运行环境和基于运行环境开发的软件，它包含运行某个软件所需的所有内容包括代码、运行时、库、环境变量和配置文件。</p>
+<h2 id="2-UnionFS（联合文件系统）"><a href="#2-UnionFS（联合文件系统）" class="headerlink" title="2.UnionFS（联合文件系统）"></a>2.UnionFS（联合文件系统）</h2><p>Union文件系统（ UnionFS）是一种分层、轻量级并且高性能的文件系统，它支持对文件系统的修改作为一次提交来一层层的叠加，同时可以将不同目录挂载到同一个虚拟文件系统下(unite several directories into a single virtual filesystem)。Union文件系统是 Docker镜像的基础。镜像可以通过分层来进行继承，基于基础镜像（没有父镜像），可以制作各种具体的应用镜像。</p>
+<p><strong>特性</strong></p>
+<p>一次同时加载多个文件系统，但从外面看起来，只能看到一个文件系统，联合加载会把各层文件系统叠加起来，这样最终的文件系统会包含所有的底层文件和目录。</p>
+<h2 id="3-Docker镜像加载原理"><a href="#3-Docker镜像加载原理" class="headerlink" title="3.Docker镜像加载原理"></a>3.Docker镜像加载原理</h2><p>docker的镜像实际上由一层一层的文件系统组成，这种层级的文件系统 UnionFS.<br>bootfs(boot file system}主要包含 bootloader和 kernel， bootloader主要是引导加载 kernel， Linux刚启动时会加载 boots文件系统，在Docker镜像的最底层是 boots.这一层与我们典型的 Linux/Unⅸx系统是一样的，包含boot加载器和内核。当boot加载完成之后整个内核就都在内存中了，此时内存的使用权已由 boots转交给内核，此时系统也会卸载 boots.<br>rootfs（ root file systen），在 boots之上·包含的就是典型 Linux系统中的/dev，/proc，/bin，/etc等标准目录和文件。 rootfs就是各种不同的操作系统发行版，比如 Ubuntu， Centos等等。</p>
+<p>对于一个精简的os， rootfs可以很小，只需要包括最基本的命令、工具和程序库就可以了，因为底层直接用Host的 kernel，自己只需要提供 rootfs就行了。由此可见对于不同的 linux发行版， boots基本是一致的， rootfs会有差别，因此不同的发行版可以公用 boots.</p>
+<h2 id="4-理解镜像层结构"><a href="#4-理解镜像层结构" class="headerlink" title="4.理解镜像层结构"></a>4.理解镜像层结构</h2><p>​        镜像的运行需要依赖一定的环境，例如：tomcat的运行需要依赖java运行环境JDK、系统环境等。</p>
+<p>​        每一个镜像想要运行都需要有完整的运行环境，但不确定本机是否含有所需要的环境。所以，在镜像中包含了本镜像运行所需要的所有环境的镜像。因此每一个镜像都包含多层内容。但每个镜像下载又相当于是可读的。当再次下载其他镜像时，如果需要的镜像在本机中已存在，就可以跳过下载，当运行需要时，可以调用本机中已有的环境。</p>
+<p>​        所以就可以解释为什么ubuntu系统镜像只有73.9M，而tomcat有647M。ubuntu系统所需要的运行环境少，而tomcat所需的运行环境多（JDK，系统等），那么，tomcat的镜像就包含JDK镜像，系统运行镜像等。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/tomcat,ubuntu.png"></p>
+<p>​        包含的镜像又有包含的关系，所以，镜像是一层一层的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/%E9%95%9C%E5%83%8F%E5%88%86%E5%B1%82.png"></p>
+<h1 id="4-容器数据卷"><a href="#4-容器数据卷" class="headerlink" title="4.容器数据卷"></a>4.容器数据卷</h1><h2 id="1-容器数据卷简介"><a href="#1-容器数据卷简介" class="headerlink" title="1.容器数据卷简介"></a>1.容器数据卷简介</h2><p>​        卷就是目录或文件，存在于一个或多个容器中，由 docker挂载到容器，但不属于联合文件系统，因此能够绕过 Union File System提供一些用于持续存储或共享数据的特性：<br>         卷的设计目的就是数据的持久化，完全独立于容器的生存周期，因此 Docke不会在容器删除时删除其挂载的数据卷</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p> 1：数据卷可在容器之间共享或重用数据<br> 2：卷中的更改可以直接生效<br> 3：数据卷中的更改不会包含在镜像的更新中<br> 4：数据卷的生命周期一直持续到没有容器使用它为止</p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>容器持久化</p>
+<p>容器间继承+数据共享</p>
+<h2 id="2-添加容器数据卷"><a href="#2-添加容器数据卷" class="headerlink" title="2.添加容器数据卷"></a>2.添加容器数据卷</h2><h3 id="1-命令添加"><a href="#1-命令添加" class="headerlink" title="1.命令添加"></a>1.命令添加</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -v 宿主机目录绝对路径:容器目录 镜像名</span><br><span class="line">&#x2F;&#x2F;添加权限，只能读取，不能写入</span><br><span class="line">docker run -it -v 宿主机目录绝对路径:容器目录:ro 镜像名</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-DockerFile添加"><a href="#2-DockerFile添加" class="headerlink" title="2.DockerFile添加"></a>2.DockerFile添加</h3><p>详细见章节5</p>
+<p>1.创建Dockerfile文件所在目录</p>
+<p>2.创建Dockerfile,并通过VOLUME创建容器数据卷</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM ubuntu</span><br><span class="line">VOLUME [&quot;&#x2F;data1&quot;,&quot;&#x2F;data2&quot;]</span><br><span class="line">CMD echo &quot;build success************************************************&quot;</span><br><span class="line">CMD &#x2F;bin.bash</span><br></pre></td></tr></table></figure>
+
+<p>3.通过容器数据卷构建镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -f &#x2F;mydocker&#x2F;Dockerfile -t jxyUbuntu</span><br></pre></td></tr></table></figure>
+
+<p>4.根据镜像创建容器</p>
+<p>5.检测</p>
+<p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B72.png"></p>
+<h2 id="3-–volumes-from"><a href="#3-–volumes-from" class="headerlink" title="3.–volumes-from"></a>3.–volumes-from</h2><p>命名的容器挂载数据卷，其它容器通过挂载这个（父容器实现数据共享，挂载数据卷的容器，称之为数据卷容器</p>
+<p><strong>命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --name 创建容器名 --volumes-from 已有容器名 镜像名&#x2F;ID</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="5-Dockerfile"><a href="#5-Dockerfile" class="headerlink" title="5.Dockerfile"></a>5.Dockerfile</h1><h2 id="1-Dockerfile简介"><a href="#1-Dockerfile简介" class="headerlink" title="1.Dockerfile简介"></a>1.Dockerfile简介</h2><p>Dockerfile是用来构建Dcke镜像的构建文件，是由一系列命令和参数构成的脚本。</p>
+<h3 id="Dockerfile内容"><a href="#Dockerfile内容" class="headerlink" title="Dockerfile内容"></a>Dockerfile内容</h3><p>1：每条保留字指令都必须为大写字母且后面要跟随至少一个参数<br>2：指令按照从上到下，顺序执行<br>3：#表示注释<br>4：每条指令都会创建一个新的镜像层，并对镜像进行提交</p>
+<h3 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h3><p>1.docker从基础镜像运行一个容器</p>
+<p>2.执行一条指令并对容器作出修改</p>
+<p>3.执行类似 docker commit的操作提交一个新的镜像层</p>
+<p>4.docker再基于刚提交的镜像运行一个新容器</p>
+<p>5.执行 dockerfile中的下一条指令直到所有指令都执行完成</p>
+<h2 id="2-Dockerfile体系结构"><a href="#2-Dockerfile体系结构" class="headerlink" title="2.Dockerfile体系结构"></a>2.Dockerfile体系结构</h2><p>1.FROM：当前新镜像是基于哪个镜像构建的。</p>
+<p>2.MAINTAINER：镜像作者（维护者）姓名、邮箱。</p>
+<p>3.RUN：容器构建时需要运行的命令。</p>
+<p>4.EXPOSE：当前容器对外暴露的端口号。</p>
+<p>5.WORKDIR：指定创建容器后，终端默认登录进来的工作目录，一个落脚点。</p>
+<p>6.ENV：构建过程中设置环境变量。</p>
+<p>7.ADD：将宿主机目录下的文件拷贝进镜像且ADD命令会自动处理URL和解压tar压缩包。</p>
+<p>8.COPY：类似ADD，拷贝文件和目录到镜像中。将从构建上下文目录中&lt;源路径&gt;的文件/录复制到新的一层的镜像内的&lt;日标路径&gt;位置。</p>
+<p>9.VOLUME：容器数据卷，用于数据保存和持久化工作。</p>
+<p>10.CMD：指定一个容器启动时要运行的命令。Dockerfile中可以有多个CMD指令，但只有最后一个生效，CMD会被 docker run之后的参                  数替换。</p>
+<p>11.ENTRYPOINT：指定一个容器启动时要运行的命令，ENTRYPOINT目的和CMD一样都是在指定容器启动程序及参数，可以多个生效。</p>
+<p>12.ONBUILD：当构建一个被继承的Dockerfile时运行命令，父镜像在被子继承后父镜像的onbuild被触发</p>
+<h1 id="6-示例"><a href="#6-示例" class="headerlink" title="6.示例"></a>6.示例</h1><h2 id="1-mysql"><a href="#1-mysql" class="headerlink" title="1.mysql"></a>1.mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:5.6</span><br><span class="line">docker run 参数 mysql:5.6</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3307:3306 --name mysql -v &#x2F;my&#x2F;mysql&#x2F;conf:&#x2F;etc&#x2F;msql&#x2F;conf.d -v &#x2F;my&#x2F;mysql&#x2F;logs:&#x2F;logs -v &#x2F;my&#x2F;mysql&#x2F;data:&#x2F;var&#x2F;lib&#x2F;mysql -e MYSQL_ROOT_PASSWORD&#x3D;0829 -d mysql:5.6</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 1521:1521 --name oracle -v /my/mysql/conf:/etc/msql/conf.d -v /my/mysql/logs:/logs -v /my/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=0829 -d mysql:5.6</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>1.-p 3307:3306：将主机的12345端口映射到 docker容器的3306端口。<br>2.–name mysql：运行服务名字<br>3.-v /my/mysql/conf:/etc/msql/conf.d：将主机/my/mysql录下的 conf挂载到容器的/ etc/mysql/conf. d<br>4.-v /my/mysql/logs:/logs：将主机/my/mysq|目录下的logs目录挂载到容器的/logs.<br>5.-v /my/mysql/data:/var/lib/mysql：将主机/my/mysql目录下的data目录挂载到容器的var/ lib/mysql<br>6.-e MYSQL_ROOT_PASSWORD=0829：初始化root用户的密码。<br>7.-d mysql:5.6：后台程序运行mysq5.6</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES</span><br><span class="line">2e835cb91b06        jxyubuntu           &quot;/bin/bash&quot;         3 hours ago         Exited (0) 48 minutes ago                       zen_euler</span><br><span class="line">247b8254b98c        tomcat              &quot;catalina.sh run&quot;   8 hours ago         Exited (143) 3 hours ago                        serene_borg</span><br><span class="line">531758b4501f        ubuntu              &quot;/bin/bash&quot;         24 hours ago        Exited (0) 24 hours ago                         pensive_margulis</span><br><span class="line">[root@localhost /]# docker run -p 3307:3306 --name mysql -v /my/mysql/conf:/etc/msql/conf.d -v /my/mysql/logs:/logs -v /my/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=0829 -d mysql:5.6</span><br><span class="line">869194b90bc6b54d8b25beb2cacc8f88c9e63748a39f5565e0bbc6491c8f0e10</span><br><span class="line">[root@localhost /]# docker ps</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES</span><br><span class="line">869194b90bc6        mysql:5.6           &quot;docker-entrypoint.s…&quot;   8 seconds ago       Up 6 seconds        0.0.0.0:3307-&gt;3306/tcp   mysql</span><br><span class="line">[root@localhost /]# docker exec -it 69194b90bc6 /bin/bash</span><br><span class="line">Error: No such container: 69194b90bc6</span><br><span class="line">[root@localhost /]# docker exec -it 869194b90bc6 /bin/bash</span><br><span class="line">root@869194b90bc6:/# mysql -uroot -p</span><br><span class="line">Enter password: </span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 1</span><br><span class="line">Server version: 5.6.48 MySQL Community Server (GPL)</span><br><span class="line"></span><br><span class="line">Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type &#x27;help;&#x27; or &#x27;\h&#x27; for help. Type &#x27;\c&#x27; to clear the current input statement.</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> show databases;</span></span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| mysql              |</span><br><span class="line">| performance_schema |</span><br><span class="line">+--------------------+</span><br><span class="line">3 rows in set (0.00 sec)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> mysql.png)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mysql03 -v /conf/mysql:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag</span><br><span class="line">把主机的/conf/mysql文件夹挂载到 mysqldocker容器的/etc/mysql/conf.d文件夹里面</span><br><span class="line">改mysql的配置文件就只需要把mysql配置文件放在自定义的文件夹下（/conf/mysql）</span><br><span class="line"></span><br><span class="line">docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</span><br><span class="line">指定mysql的一些配置参数</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="2-Redis"><a href="#2-Redis" class="headerlink" title="2.Redis"></a>2.Redis</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 6375:6379 --name myredis -v &#x2F;my&#x2F;redis&#x2F;conf&#x2F;redis.conf:&#x2F;usr&#x2F;local&#x2F;etc&#x2F;redis&#x2F;redis.conf -v &#x2F;my&#x2F;redis&#x2F;data:&#x2F;data -d redis:5.0.9 redis-server &#x2F;usr&#x2F;local&#x2F;etc&#x2F;redis&#x2F;redis.conf --appendonly yes</span><br></pre></td></tr></table></figure>
+
+<p>![](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker">https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker</a> redis.png)</p>
+<h2 id="3-RabbitMQ"><a href="#3-RabbitMQ" class="headerlink" title="3.RabbitMQ"></a>3.RabbitMQ</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 5672:5672 -p 15672:15672 --name 容器名 镜像ID</span><br><span class="line"><span class="meta">#</span><span class="bash">打开web界面服务（15672端口）</span></span><br><span class="line"><span class="meta">#</span><span class="bash">进入容器命令行</span></span><br><span class="line">docker exec -it 容器ID /bin/bash</span><br><span class="line"><span class="meta">#</span><span class="bash">打开服务</span></span><br><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-Zookeeper"><a href="#4-Zookeeper" class="headerlink" title="4.Zookeeper"></a>4.Zookeeper</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@jxy ~]# docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS                                                  NAMES</span><br><span class="line">96f94f42b9a1        zookeeper           &quot;/docker-entrypoint.…&quot;   18 seconds ago      Up 17 seconds              2888/tcp, 3888/tcp, 0.0.0.0:2181-&gt;2181/tcp, 8080/tcp   zookeeper</span><br><span class="line">aa3b27bce4df        698f617ef315        &quot;docker-entrypoint.s…&quot;   2 weeks ago         Exited (0) 2 weeks ago                                                            myRabbitMQ</span><br><span class="line">d379fbbea330        redis:5.0.9         &quot;docker-entrypoint.s…&quot;   5 weeks ago         Exited (0) 2 weeks ago                                                            myredis</span><br><span class="line">869194b90bc6        mysql:5.6           &quot;docker-entrypoint.s…&quot;   5 weeks ago         Exited (0) 3 weeks ago                                                            mysql</span><br><span class="line">2e835cb91b06        jxyubuntu           &quot;/bin/bash&quot;              5 weeks ago         Exited (0) 5 weeks ago                                                            zen_euler</span><br><span class="line">247b8254b98c        tomcat              &quot;catalina.sh run&quot;        5 weeks ago         Exited (143) 5 weeks ago                                                          serene_borg</span><br><span class="line">531758b4501f        ubuntu              &quot;/bin/bash&quot;              5 weeks ago         Exited (0) 5 weeks ago                                                            pensive_margulis</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img/docker-zookeeper.png"></p>
+<p><strong>完整示例</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">[root@jxy ~]# docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">rabbitmq            latest              698f617ef315        4 weeks ago         168MB</span><br><span class="line">jxyubuntu           latest              35d43ee54d7f        5 weeks ago         73.9MB</span><br><span class="line">ubuntu              latest              74435f89ab78        7 weeks ago         73.9MB</span><br><span class="line">redis               latest              235592615444        8 weeks ago         104MB</span><br><span class="line">tomcat              latest              2eb5a120304e        8 weeks ago         647MB</span><br><span class="line">redis               5.0.9               4de10be2bf5e        8 weeks ago         98.3MB</span><br><span class="line">mysql               5.6                 8de95e6026c3        8 weeks ago         302MB</span><br><span class="line">hello-world         latest              bf756fb1ae65        7 months ago        13.3kB</span><br><span class="line">[root@jxy ~]# docker search zookeeper</span><br><span class="line">NAME                               DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED</span><br><span class="line">zookeeper                          Apache ZooKeeper is an open-source server wh…   903                 [OK]                </span><br><span class="line">jplock/zookeeper                   Builds a docker image for Zookeeper version …   164                                     [OK]</span><br><span class="line">wurstmeister/zookeeper                                                             126                                     [OK]</span><br><span class="line">mesoscloud/zookeeper               ZooKeeper                                       73                                      [OK]</span><br><span class="line">bitnami/zookeeper                  ZooKeeper is a centralized service for distr…   38                                      [OK]</span><br><span class="line">mbabineau/zookeeper-exhibitor                                                      24                                      [OK]</span><br><span class="line">digitalwonderland/zookeeper        Latest Zookeeper - clusterable                  20                                      [OK]</span><br><span class="line">tobilg/zookeeper-webui             Docker image for using `zk-web` as ZooKeeper…   15                                      [OK]</span><br><span class="line">confluent/zookeeper                                                                13                                      [OK]</span><br><span class="line">debezium/zookeeper                 Zookeeper image required when running the De…   12                                      [OK]</span><br><span class="line">31z4/zookeeper                     Dockerized Apache Zookeeper.                    7                                       [OK]</span><br><span class="line">thefactory/zookeeper-exhibitor     Exhibitor-managed ZooKeeper with S3 backups …   6                                       [OK]</span><br><span class="line">emccorp/zookeeper                  Zookeeper                                       2                                       </span><br><span class="line">engapa/zookeeper                   Zookeeper image optimised for being used int…   2                                       </span><br><span class="line">perrykim/zookeeper                 k8s - zookeeper  ( forked k8s contrib )         1                                       [OK]</span><br><span class="line">paulbrown/zookeeper                Zookeeper on Kubernetes (PetSet)                1                                       [OK]</span><br><span class="line">duffqiu/zookeeper-cli                                                              1                                       [OK]</span><br><span class="line">strimzi/zookeeper                                                                  1                                       </span><br><span class="line">josdotso/zookeeper-exporter        ref: https://github.com/carlpett/zookeeper_e…   1                                       [OK]</span><br><span class="line">openshift/zookeeper-346-fedora20   ZooKeeper 3.4.6 with replication support        1                                       </span><br><span class="line">midonet/zookeeper                  Dockerfile for a Zookeeper server.              0                                       [OK]</span><br><span class="line">humio/zookeeper-dev                zookeeper build with zulu jvm.                  0                                       </span><br><span class="line">dabealu/zookeeper-exporter         zookeeper exporter for prometheus               0                                       [OK]</span><br><span class="line">phenompeople/zookeeper             Apache ZooKeeper is an open-source server wh…   0                                       [OK]</span><br><span class="line">pravega/zookeeper-operator         Kubernetes operator for Zookeeper               0                                       </span><br><span class="line">[root@jxy ~]# docker pull zookeeper</span><br><span class="line"></span><br><span class="line">Using default tag: latest</span><br><span class="line">latest: Pulling from library/zookeeper</span><br><span class="line">6ec8c9369e08: Pull complete </span><br><span class="line">3aa4e9b77806: Pull complete </span><br><span class="line">6d8b5d3bc409: Pull complete </span><br><span class="line">d7b61e0fcf67: Pull complete </span><br><span class="line">fade1530acad: Pull complete </span><br><span class="line">5ccffe95b89d: Pull complete </span><br><span class="line">4ba320b19ebd: Pull complete </span><br><span class="line">1e6de2e0eb81: Pull complete </span><br><span class="line">Digest: sha256:987edbc16352baf0e68a383906d2fc8cd9af89f4593c6a37abb73df0dd35f413</span><br><span class="line">Status: Downloaded newer image for zookeeper:latest</span><br><span class="line">docker.io/library/zookeeper:latest</span><br><span class="line">[root@jxy ~]# docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">zookeeper           latest              7341c5373a13        7 days ago          252MB</span><br><span class="line">rabbitmq            latest              698f617ef315        4 weeks ago         168MB</span><br><span class="line">jxyubuntu           latest              35d43ee54d7f        5 weeks ago         73.9MB</span><br><span class="line">ubuntu              latest              74435f89ab78        7 weeks ago         73.9MB</span><br><span class="line">redis               latest              235592615444        8 weeks ago         104MB</span><br><span class="line">tomcat              latest              2eb5a120304e        8 weeks ago         647MB</span><br><span class="line">redis               5.0.9               4de10be2bf5e        8 weeks ago         98.3MB</span><br><span class="line">mysql               5.6                 8de95e6026c3        8 weeks ago         302MB</span><br><span class="line">hello-world         latest              bf756fb1ae65        7 months ago        13.3kB</span><br><span class="line">[root@jxy ~]# docker run -p 2181:2181 --name zookeeper -d zookeeper</span><br><span class="line">96f94f42b9a1d3ee58f58c3890a4241a4b7752c28e09990da1c41bff91ea13c7</span><br><span class="line">[root@jxy ~]# docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS                                                  NAMES</span><br><span class="line">96f94f42b9a1        zookeeper           &quot;/docker-entrypoint.…&quot;   18 seconds ago      Up 17 seconds              2888/tcp, 3888/tcp, 0.0.0.0:2181-&gt;2181/tcp, 8080/tcp   zookeeper</span><br><span class="line">aa3b27bce4df        698f617ef315        &quot;docker-entrypoint.s…&quot;   2 weeks ago         Exited (0) 2 weeks ago                                                            myRabbitMQ</span><br><span class="line">d379fbbea330        redis:5.0.9         &quot;docker-entrypoint.s…&quot;   5 weeks ago         Exited (0) 2 weeks ago                                                            myredis</span><br><span class="line">869194b90bc6        mysql:5.6           &quot;docker-entrypoint.s…&quot;   5 weeks ago         Exited (0) 3 weeks ago                                                            mysql</span><br><span class="line">2e835cb91b06        jxyubuntu           &quot;/bin/bash&quot;              5 weeks ago         Exited (0) 5 weeks ago                                                            zen_euler</span><br><span class="line">247b8254b98c        tomcat              &quot;catalina.sh run&quot;        5 weeks ago         Exited (143) 5 weeks ago                                                          serene_borg</span><br><span class="line">531758b4501f        ubuntu              &quot;/bin/bash&quot;              5 weeks ago         Exited (0) 5 weeks ago      </span><br><span class="line">[root@jxy ~]# docker exec -it 96f94f42b9a1 /bin/bash</span><br><span class="line">root@96f94f42b9a1:/apache-zookeeper-3.6.1-bin# pwd</span><br><span class="line">/apache-zookeeper-3.6.1-bin</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="7-上传镜像到阿里云"><a href="#7-上传镜像到阿里云" class="headerlink" title="7.上传镜像到阿里云"></a>7.上传镜像到阿里云</h1><p><a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/repository/cn-hangzhou/newrain/newrain/details">参考阿里云官方文档</a></p>
+<h2 id="1-登录阿里云Docker-Registry"><a href="#1-登录阿里云Docker-Registry" class="headerlink" title="1. 登录阿里云Docker Registry"></a>1. 登录阿里云Docker Registry</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker login --username&#x3D;旧城新雨 registry.cn-hangzhou.aliyuncs.com</span><br></pre></td></tr></table></figure>
+
+<p>用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。</p>
+<p>您可以在访问凭证页面修改凭证密码。</p>
+<h2 id="2-从Registry中拉取镜像"><a href="#2-从Registry中拉取镜像" class="headerlink" title="2. 从Registry中拉取镜像"></a>2. 从Registry中拉取镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull registry.cn-hangzhou.aliyuncs.com&#x2F;newrain&#x2F;newrain:[镜像版本号]</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-将镜像推送到Registry"><a href="#3-将镜像推送到Registry" class="headerlink" title="3. 将镜像推送到Registry"></a>3. 将镜像推送到Registry</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker login --username&#x3D;旧城新雨 registry.cn-hangzhou.aliyuncs.com$ sudo docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com&#x2F;newrain&#x2F;newrain:[镜像版本号]$ sudo docker push registry.cn-hangzhou.aliyuncs.com&#x2F;newrain&#x2F;newrain:[镜像版本号]</span><br></pre></td></tr></table></figure>
+
+<p>请根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。</p>
+<h2 id="4-选择合适的镜像仓库地址"><a href="#4-选择合适的镜像仓库地址" class="headerlink" title="4. 选择合适的镜像仓库地址"></a>4. 选择合适的镜像仓库地址</h2><p>从ECS推送镜像时，可以选择使用镜像仓库内网地址。推送速度将得到提升并且将不会损耗您的公网流量。</p>
+<p>如果您使用的机器位于VPC网络，请使用 registry-vpc.cn-hangzhou.aliyuncs.com 作为Registry的域名登录，并作为镜像命名空间前缀。</p>
+<h2 id="5-示例"><a href="#5-示例" class="headerlink" title="5. 示例"></a>5. 示例</h2><p>使用”docker tag”命令重命名镜像，并将它通过专有网络地址推送至Registry。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker imagesREPOSITORY                                                         TAG                 IMAGE ID            CREATED             VIRTUAL SIZEregistry.aliyuncs.com&#x2F;acs&#x2F;agent                                    0.7-dfb6816         37bb9c63c8b2        7 days ago          37.89 MB$ sudo docker tag 37bb9c63c8b2 registry-vpc.cn-hangzhou.aliyuncs.com&#x2F;acs&#x2F;agent:0.7-dfb6816</span><br></pre></td></tr></table></figure>
+
+<p>使用”docker images”命令找到镜像，将该镜像名称中的域名部分变更为Registry专有网络地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker push registry-vpc.cn-hangzhou.aliyuncs.com&#x2F;acs&#x2F;agent:0.7-dfb6816</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechatpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,46 +646,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://new-rain.github.io/020/09/18/Docker/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/18/hello-world/" class="archive-article-date">
-  	<time datetime="2020-09-18T06:32:44.245Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Docker%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">1.Docker入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Docker%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1.Docker简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Docker%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-number">1.2.</span> <span class="toc-text">2.Docker的基本组成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%95%9C%E5%83%8F"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Docker%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.</span> <span class="toc-text">3.Docker安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Docker%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.Docker安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.配置阿里云镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B5%8B%E8%AF%95Docker"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.测试Docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.4.</span> <span class="toc-text">4.原理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">2.常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">2.1.</span> <span class="toc-text">1.帮助命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4"><span class="toc-number">2.2.</span> <span class="toc-text">2.镜像命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%97%E5%87%BA%E6%9C%AC%E5%9C%B0%E9%95%9C%E5%83%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text">1.列出本地镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9F%A5%E6%89%BE%E9%95%9C%E5%83%8F"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.查找镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="toc-number">2.2.3.</span> <span class="toc-text">3.下载镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F"><span class="toc-number">2.2.4.</span> <span class="toc-text">4.删除镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%8F%90%E4%BA%A4%E9%95%9C%E5%83%8F"><span class="toc-number">2.2.5.</span> <span class="toc-text">5.提交镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F"><span class="toc-number">2.2.6.</span> <span class="toc-text">6.创建镜像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.3.</span> <span class="toc-text">3.容器命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BA%E5%B9%B6%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.新建并启动容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%97%E5%87%BA%E5%BD%93%E5%89%8D%E6%89%80%E6%9C%89%E8%BF%90%E8%A1%8C%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.列出当前所有运行中的容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%80%80%E5%87%BA%E5%AE%B9%E5%99%A8"><span class="toc-number">2.3.3.</span> <span class="toc-text">3.退出容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8"><span class="toc-number">2.3.4.</span> <span class="toc-text">4.启动容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E9%87%8D%E5%90%AF%E5%AE%B9%E5%99%A8"><span class="toc-number">2.3.5.</span> <span class="toc-text">5.重启容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%81%9C%E6%AD%A2%E5%AE%B9%E5%99%A8"><span class="toc-number">2.3.6.</span> <span class="toc-text">6.停止容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%BC%BA%E5%88%B6%E5%81%9C%E6%AD%A2%E5%AE%B9%E5%99%A8"><span class="toc-number">2.3.7.</span> <span class="toc-text">7.强制停止容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%88%A0%E9%99%A4%E5%B7%B2%E5%81%9C%E6%AD%A2%E5%AE%B9%E5%99%A8"><span class="toc-number">2.3.8.</span> <span class="toc-text">8.删除已停止容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%88%A0%E9%99%A4%E5%A4%9A%E4%B8%AA%E5%AE%B9%E5%99%A8"><span class="toc-number">2.3.9.</span> <span class="toc-text">9.删除多个容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97"><span class="toc-number">2.3.10.</span> <span class="toc-text">10.查看容器日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E5%86%85%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="toc-number">2.3.11.</span> <span class="toc-text">11.查看容器内的进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E5%86%85%E9%83%A8%E7%BB%86%E8%8A%82"><span class="toc-number">2.3.12.</span> <span class="toc-text">12.查看容器内部细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E8%BF%9B%E5%85%A5%E6%AD%A3%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%9A%84%E5%AE%B9%E5%99%A8%E5%B9%B6%E4%BB%A5%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BA%A4%E4%BA%92"><span class="toc-number">2.3.13.</span> <span class="toc-text">13.进入正在运行的容器并以命令行交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E4%BB%8E%E5%AE%B9%E5%99%A8%E5%86%85%E6%8B%B7%E8%B4%9D%E6%95%B0%E6%8D%AE%E5%88%B0%E4%B8%BB%E6%9C%BA"><span class="toc-number">2.3.14.</span> <span class="toc-text">14.从容器内拷贝数据到主机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9B%AE%E5%BD%95%E6%8C%82%E8%BD%BD%E5%88%B0%E5%AE%B9%E5%99%A8%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-number">2.3.15.</span> <span class="toc-text">15宿主机目录挂载到容器的目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-number">2.4.</span> <span class="toc-text">4.其他命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Docker%E9%95%9C%E5%83%8F"><span class="toc-number">3.</span> <span class="toc-text">3.Docker镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%95%9C%E5%83%8F%E7%AE%80%E4%BB%8B"><span class="toc-number">3.1.</span> <span class="toc-text">1.镜像简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-UnionFS%EF%BC%88%E8%81%94%E5%90%88%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">2.UnionFS（联合文件系统）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Docker%E9%95%9C%E5%83%8F%E5%8A%A0%E8%BD%BD%E5%8E%9F%E7%90%86"><span class="toc-number">3.3.</span> <span class="toc-text">3.Docker镜像加载原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%90%86%E8%A7%A3%E9%95%9C%E5%83%8F%E5%B1%82%E7%BB%93%E6%9E%84"><span class="toc-number">3.4.</span> <span class="toc-text">4.理解镜像层结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-number">4.</span> <span class="toc-text">4.容器数据卷</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7%E7%AE%80%E4%BB%8B"><span class="toc-number">4.1.</span> <span class="toc-text">1.容器数据卷简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">4.1.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-number">4.1.2.</span> <span class="toc-text">作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B7%BB%E5%8A%A0%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-number">4.2.</span> <span class="toc-text">2.添加容器数据卷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%91%BD%E4%BB%A4%E6%B7%BB%E5%8A%A0"><span class="toc-number">4.2.1.</span> <span class="toc-text">1.命令添加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-DockerFile%E6%B7%BB%E5%8A%A0"><span class="toc-number">4.2.2.</span> <span class="toc-text">2.DockerFile添加</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E2%80%93volumes-from"><span class="toc-number">4.3.</span> <span class="toc-text">3.–volumes-from</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-Dockerfile"><span class="toc-number">5.</span> <span class="toc-text">5.Dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Dockerfile%E7%AE%80%E4%BB%8B"><span class="toc-number">5.1.</span> <span class="toc-text">1.Dockerfile简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dockerfile%E5%86%85%E5%AE%B9"><span class="toc-number">5.1.1.</span> <span class="toc-text">Dockerfile内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="toc-number">5.1.2.</span> <span class="toc-text">执行流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Dockerfile%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">5.2.</span> <span class="toc-text">2.Dockerfile体系结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E7%A4%BA%E4%BE%8B"><span class="toc-number">6.</span> <span class="toc-text">6.示例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-mysql"><span class="toc-number">6.1.</span> <span class="toc-text">1.mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Redis"><span class="toc-number">6.2.</span> <span class="toc-text">2.Redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-RabbitMQ"><span class="toc-number">6.3.</span> <span class="toc-text">3.RabbitMQ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Zookeeper"><span class="toc-number">6.4.</span> <span class="toc-text">4.Zookeeper</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E4%B8%8A%E4%BC%A0%E9%95%9C%E5%83%8F%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91"><span class="toc-number">7.</span> <span class="toc-text">7.上传镜像到阿里云</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%99%BB%E5%BD%95%E9%98%BF%E9%87%8C%E4%BA%91Docker-Registry"><span class="toc-number">7.1.</span> <span class="toc-text">1. 登录阿里云Docker Registry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BB%8ERegistry%E4%B8%AD%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F"><span class="toc-number">7.2.</span> <span class="toc-text">2. 从Registry中拉取镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%B0%86%E9%95%9C%E5%83%8F%E6%8E%A8%E9%80%81%E5%88%B0Registry"><span class="toc-number">7.3.</span> <span class="toc-text">3. 将镜像推送到Registry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80"><span class="toc-number">7.4.</span> <span class="toc-text">4. 选择合适的镜像仓库地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%A4%BA%E4%BE%8B"><span class="toc-number">7.5.</span> <span class="toc-text">5. 示例</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -259,8 +781,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
