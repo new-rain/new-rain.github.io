@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="学习笔记, 努力的小渣渣">
+    <meta name="keywords" content="IDEA中maven模块的jdk版本总是自动更换, 努力的小渣渣">
     <meta name="description" content="努力学习啊">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>学习笔记 | 努力的小渣渣</title>
+    <title>IDEA中maven模块的jdk版本总是自动更换 | 努力的小渣渣</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -225,12 +225,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">学习笔记</h1>
+                    <h1 class="description center-align post-title">IDEA中maven模块的jdk版本总是自动更换</h1>
                 </div>
             </div>
         </div>
@@ -344,9 +344,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/IDEA/">
+                                <span class="chip bg-color">IDEA</span>
+                            </a>
+                        
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/Maven/">
+                                <span class="chip bg-color">Maven</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BC%82%E5%B8%B8/">
+                                <span class="chip bg-color">异常</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BB%8F%E9%AA%8C/">
+                                <span class="chip bg-color">经验</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -358,7 +378,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-18
+                    2020-12-02
                 </div>
                 
 
@@ -387,14 +407,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一个努力学习的计算机专业小渣渣</p>
-<p>本博客用来记录学习笔记</p>
-<p>头秃头秃</p>
-<p>😀</p>
-<a id="more"></a>
-
-
-
+                <p>IDEA中maven模块的jdk版本总是自动更换，导致程序因jdk版本不一致或版本过低导致编译异常</p>
+<p>解决方法：在pom.xml文件中设置jdk版本<br>参考自<a target="_blank" rel="noopener" href="https://blog.csdn.net/wltsysterm/article/details/79170692?ops_request_misc=&request_id=&biz_id=102&utm_term=IDEA%E6%A8%A1%E5%9D%97jdk%E8%87%AA%E5%B7%B1%E6%8D%A2%E6%88%901.5&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-79170692">独行侠_阿涛 的博客</a></p>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>
+               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.maven.plugins<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>maven-compiler-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.5.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>showDeprecation</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>showDeprecation</span><span class="token punctuation">></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>showWarnings</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>showWarnings</span><span class="token punctuation">></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">></span></span>1.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>target</span><span class="token punctuation">></span></span>1.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>target</span><span class="token punctuation">></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>encoding</span><span class="token punctuation">></span></span>UTF-8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>encoding</span><span class="token punctuation">></span></span>
+               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -407,7 +437,27 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/IDEA/">
+                                    <span class="chip bg-color">IDEA</span>
+                                </a>
+                            
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
+                                </a>
+                            
+                                <a href="/tags/Maven/">
+                                    <span class="chip bg-color">Maven</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BC%82%E5%B8%B8/">
+                                    <span class="chip bg-color">异常</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BB%8F%E9%AA%8C/">
+                                    <span class="chip bg-color">经验</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -581,24 +631,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/18/Docker/">
+                <a href="/2021/04/19/IDEA%E8%BF%90%E8%A1%8Cweb%E5%B7%A5%E7%A8%8B%EF%BC%8C%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BA%E4%B9%B1%E7%A0%81/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Docker">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="IDEA运行web工程，控制台输出乱码">
                         
-                        <span class="card-title">Docker</span>
+                        <span class="card-title">IDEA运行web工程，控制台输出乱码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.Docker入门1.Docker简介Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-18
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-19
                         </span>
                         <span class="publish-author">
                             
@@ -611,12 +661,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/docker/">
-                        <span class="chip bg-color">docker</span>
+                    <a href="/tags/IDEA/">
+                        <span class="chip bg-color">IDEA</span>
                     </a>
                     
-                    <a href="/tags/%E5%AE%B9%E5%99%A8/">
-                        <span class="chip bg-color">容器</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%8F%E9%AA%8C/">
+                        <span class="chip bg-color">经验</span>
                     </a>
                     
                 </div>
@@ -627,30 +681,27 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/18/hello-world/">
+                <a href="/2020/10/20/java%E5%9B%A0%E7%8E%AF%E5%A2%83%E7%89%88%E6%9C%AC%E4%B8%8D%E4%B8%80%E8%87%B4%E5%AF%BC%E8%87%B4%E7%9A%84%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="学习笔记">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="java因环境版本不一致导致的编译错误">
                         
-                        <span class="card-title">学习笔记</span>
+                        <span class="card-title">java因环境版本不一致导致的编译错误</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一个努力学习的计算机专业小渣渣
-本博客用来记录学习笔记
-头秃头秃
-😀
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-20
                             </span>
                         <span class="publish-author">
                             
@@ -660,7 +711,30 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/IDEA/">
+                        <span class="chip bg-color">IDEA</span>
+                    </a>
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BC%82%E5%B8%B8/">
+                        <span class="chip bg-color">异常</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%8F%E9%AA%8C/">
+                        <span class="chip bg-color">经验</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%8E%AF%E5%A2%83/">
+                        <span class="chip bg-color">环境</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
