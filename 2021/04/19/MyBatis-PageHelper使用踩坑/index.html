@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="org.springframework.beans.factory.BeanDefinitionStoreException, 努力的小渣渣">
+    <meta name="keywords" content="MyBatis-PageHelper使用踩坑记录, 努力的小渣渣">
     <meta name="description" content="努力学习啊">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>org.springframework.beans.factory.BeanDefinitionStoreException | 努力的小渣渣</title>
+    <title>MyBatis-PageHelper使用踩坑记录 | 努力的小渣渣</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -225,12 +225,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">org.springframework.beans.factory.BeanDefinitionStoreException</h1>
+                    <h1 class="description center-align post-title">MyBatis-PageHelper使用踩坑记录</h1>
                 </div>
             </div>
         </div>
@@ -350,16 +350,16 @@
                                 <span class="chip bg-color">java</span>
                             </a>
                         
-                            <a href="/tags/%E5%BC%82%E5%B8%B8/">
-                                <span class="chip bg-color">异常</span>
-                            </a>
-                        
                             <a href="/tags/%E7%BB%8F%E9%AA%8C/">
                                 <span class="chip bg-color">经验</span>
                             </a>
                         
-                            <a href="/tags/spring/">
-                                <span class="chip bg-color">spring</span>
+                            <a href="/tags/MyBatis/">
+                                <span class="chip bg-color">MyBatis</span>
+                            </a>
+                        
+                            <a href="/tags/PageHelper/">
+                                <span class="chip bg-color">PageHelper</span>
                             </a>
                         
                     </div>
@@ -403,34 +403,25 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息"></a>报错信息</h1><pre class="line-numbers language-none"><code class="language-none">03-Jul-2020 19:19:52.558 警告 [RMI TCP Connection(3)-127.0.0.1] org.springframework.context.support.AbstractApplicationContext.refresh Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &#39;org.springframework.cache.interceptor.CacheInterceptor#0&#39;: Cannot resolve reference to bean &#39;cacheManager&#39; while setting bean property &#39;cacheManager&#39;; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named &#39;cacheManager&#39; available
-03-Jul-2020 19:19:52.562 严重 [RMI TCP Connection(3)-127.0.0.1] org.springframework.web.context.ContextLoader.initWebApplicationContext Context initialization failed
-	org.springframework.beans.factory.BeanCreationException: Error creating bean with name &#39;org.springframework.cache.interceptor.CacheInterceptor#0&#39;: Cannot resolve reference to bean &#39;cacheManager&#39; while setting bean property &#39;cacheManager&#39;; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named &#39;cacheManager&#39; available
-	...
-03-Jul-2020 19:19:52.576 严重 [RMI TCP Connection(3)-127.0.0.1] org.apache.catalina.core.StandardContext.startInternal One or more listeners failed to start. Full details will be found in the appropriate container log file
-03-Jul-2020 19:19:52.577 严重 [RMI TCP Connection(3)-127.0.0.1] org.apache.catalina.core.StandardContext.startInternal Context [&#x2F;SpringMVC] startup failed due to previous errors
-[2020-07-03 07:19:52,590] Artifact SpringMVC:war exploded: Error during artifact deployment. See server log for details.
-03-Jul-2020 19:20:00.379 信息 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [D:\apache-tomcat-9.0.31\webapps\manager]
-03-Jul-2020 19:20:00.433 信息 [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\apache-tomcat-9.0.31\webapps\manager] has finished in [54] ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h2 id="1-PageHelper出现SQLException"><a href="#1-PageHelper出现SQLException" class="headerlink" title="1.PageHelper出现SQLException"></a>1.PageHelper出现SQLException</h2><p>获取原本的SQL语句，在其后边拼接上<code>limit</code>语句，然后执行。如果后边添加分号，会直接在分好后拼接linmit，造成SQLException</p>
+<h2 id="2-一次发起多次查询请求，分页不起作用"><a href="#2-一次发起多次查询请求，分页不起作用" class="headerlink" title="2.一次发起多次查询请求，分页不起作用"></a>2.一次发起多次查询请求，分页不起作用</h2><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>​        PageHelper插件在定义<code>PageHelper.startPage()</code>之后，只会对第一次发起的查询请求进行分页操作。之后<code>PageHelper.startPage()</code>已经失效，所以之后的查询会原样输出。</p>
+<p>​        所以并不是分页未起作用，只是在第一次请求之后，PageHelper已经完成并停止。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//开启分页</span>
+<span class="token class-name">PageHelper</span><span class="token punctuation">.</span><span class="token function">startPage</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">LinkedHashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> u <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//第一次查询请求，PageHelper生效，将查询到的结果进行分页操作，将结果添加进集合 u </span>
+u<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>userDao<span class="token punctuation">.</span><span class="token function">searchUserByKeyWord</span><span class="token punctuation">(</span>keyword<span class="token punctuation">,</span> no<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//第一次查询结束，PageHelper失效</span>
+<span class="token comment">//之后的查询操作，PageHelper并未生效，查询到的结果未经分页操作直接放入集合中</span>
+u<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>userDao<span class="token punctuation">.</span><span class="token function">searchUserByKeyWord1</span><span class="token punctuation">(</span>keyword<span class="token punctuation">,</span> no<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+u<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>userDao<span class="token punctuation">.</span><span class="token function">searchUserByKeyWord2</span><span class="token punctuation">(</span>keyword<span class="token punctuation">,</span> no<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> <span class="token class-name">AllRes</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//此时PageInfo并未生效，只是将集合AllRes转换为PageInfo对象。</span>
+<span class="token class-name">PageInfo</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> pageInfo<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">PageInfo</span><span class="token punctuation">(</span><span class="token class-name">AllRes</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>所以查询结果并不是预期的将所有的查询结果放入到一个集合中，在对合并的集合进行分页操作。</p>
+<p>真正的结果是，对第一次查询进行了分页操作，将分页后的结果放入总集合中。之后执行其余的查询操作，并将讲过放入总集合中。最后虽然得到了PageInfo对象，但并不是分页结果，而是将总集合转换为了PageInfo对象。</p>
 
-<p><strong>错误提示</strong><br>Error creating bean with name ‘org.springframework.cache.interceptor.CacheInterceptor#0’: Cannot resolve reference to bean ‘cacheManager’ while setting bean property ‘cacheManager’; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named ‘cacheManager’ available</p>
-<p>在设置bean属性“cacheManager”时无法解决对bean“cacheManager”的引用。<br>经过百度得知cacheManager适用于缓存的，但此时并未配置缓存相关的信息。<br>但是在检查xml配置文件时，发现beans标签中有一条 xmlns:mvc=”<a target="_blank" rel="noopener" href="http://www.springframework.org/schema/cache&quot;">http://www.springframework.org/schema/cache&quot;</a><br>对应的schemaLocation也有<br><a target="_blank" rel="noopener" href="http://www.springframework.org/schema/cache">http://www.springframework.org/schema/cache</a> <a target="_blank" rel="noopener" href="http://www.springframework.org/schema/cache/spring-cache.xsd&quot;">http://www.springframework.org/schema/cache/spring-cache.xsd&quot;</a><br>可以发现本应是配置mvc标签的位置变为了配置cache标签，导致&lt;<a href="mvc:annotation-driven/">mvc:annotation-driven/</a>&gt;虽然没报错，但在运行时，无法找到对应的资源。<br>经过重试几次后发现IDEA在配置mvc标签时，自动生成的xmlns及schemaLocation会生成为cache的，这时只需将其改为mvc或添加mvc的即可。</p>
-<p>错误标签</p>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/context<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>mvc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/cache<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>改正标签如下：</p>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/context<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xmlns:</span>mvc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/mvc<span class="token punctuation">"</span></span>
-       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
-                           http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -448,16 +439,16 @@
                                     <span class="chip bg-color">java</span>
                                 </a>
                             
-                                <a href="/tags/%E5%BC%82%E5%B8%B8/">
-                                    <span class="chip bg-color">异常</span>
-                                </a>
-                            
                                 <a href="/tags/%E7%BB%8F%E9%AA%8C/">
                                     <span class="chip bg-color">经验</span>
                                 </a>
                             
-                                <a href="/tags/spring/">
-                                    <span class="chip bg-color">spring</span>
+                                <a href="/tags/MyBatis/">
+                                    <span class="chip bg-color">MyBatis</span>
+                                </a>
+                            
+                                <a href="/tags/PageHelper/">
+                                    <span class="chip bg-color">PageHelper</span>
                                 </a>
                             
                         </div>
@@ -629,9 +620,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/04/19/MyBatis-PageHelper%E4%BD%BF%E7%94%A8%E8%B8%A9%E5%9D%91/">
                     <div class="card-image">
@@ -649,9 +641,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -660,6 +652,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -690,13 +683,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/19/IDEA%E8%BF%90%E8%A1%8Cweb%E5%B7%A5%E7%A8%8B%EF%BC%8C%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BA%E4%B9%B1%E7%A0%81/">
+                <a href="/2021/04/19/org-springframework-beans-factory-BeanDefinitionStoreException/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="IDEA运行web工程，控制台输出乱码">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="org.springframework.beans.factory.BeanDefinitionStoreException">
                         
-                        <span class="card-title">IDEA运行web工程，控制台输出乱码</span>
+                        <span class="card-title">org.springframework.beans.factory.BeanDefinitionStoreException</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -720,16 +713,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/IDEA/">
-                        <span class="chip bg-color">IDEA</span>
-                    </a>
-                    
                     <a href="/tags/java/">
                         <span class="chip bg-color">java</span>
                     </a>
                     
+                    <a href="/tags/%E5%BC%82%E5%B8%B8/">
+                        <span class="chip bg-color">异常</span>
+                    </a>
+                    
                     <a href="/tags/%E7%BB%8F%E9%AA%8C/">
                         <span class="chip bg-color">经验</span>
+                    </a>
+                    
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
                 </div>
