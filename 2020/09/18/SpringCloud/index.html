@@ -735,43 +735,43 @@
 
 
 <h5 id="3-配置文件application-yml"><a href="#3-配置文件application-yml" class="headerlink" title="3.配置文件application.yml"></a>3.配置文件application.yml</h5><p><strong>配置文件添加在resources目录下</strong></p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#端口号
-server:
-  port: 8001
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#端口号</span>
+<span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8001</span>
 
-#服务名称
-spring:
-  application:
-    name: cloud-payment-service
+<span class="token comment">#服务名称</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service
 
-  datasource:
-    #   数据源基本配置
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test?useUnicode&#x3D;true&amp;characterEncoding&#x3D;utf-8
-    username: root
-    password: &quot;0829&quot;
-    type: com.alibaba.druid.pool.DruidDataSource
-    #   数据源其他配置,默认不起作用需要手动配置
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，&#39;wall&#39;用于防火墙
-    maxPoolPreparedStatementPerConnectionSize: 20
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql&#x3D;true;druid.stat.slowSqlMillis&#x3D;500
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token comment">#   数据源基本配置</span>
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/test<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding=utf-</span><span class="token number">8</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"0829"</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> com.alibaba.druid.pool.DruidDataSource
+    <span class="token comment">#   数据源其他配置,默认不起作用需要手动配置</span>
+    <span class="token key atrule">initialSize</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">minIdle</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">maxActive</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">maxWait</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">timeBetweenEvictionRunsMillis</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">minEvictableIdleTimeMillis</span><span class="token punctuation">:</span> <span class="token number">300000</span>
+    <span class="token key atrule">validationQuery</span><span class="token punctuation">:</span> SELECT 1 FROM DUAL
+    <span class="token key atrule">testWhileIdle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">testOnBorrow</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">testOnReturn</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">poolPreparedStatements</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment">#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙</span>
+    <span class="token key atrule">maxPoolPreparedStatementPerConnectionSize</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">useGlobalDataSourceStat</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">connectionProperties</span><span class="token punctuation">:</span> druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
-mybatis:
-  mapper-locations: classpath:mapper&#x2F;*.xml
-#  实体类所在包
-  type-aliases-package: com.jxy.springcloud.entity
+<span class="token key atrule">mybatis</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mapper-locations</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>mapper/<span class="token important">*.xml</span>
+<span class="token comment">#  实体类所在包</span>
+  <span class="token key atrule">type-aliases-package</span><span class="token punctuation">:</span> com.jxy.springcloud.entity
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
@@ -834,9 +834,9 @@ mybatis:
 
 
 
-<h5 id="3-配置application-yml配置文件"><a href="#3-配置application-yml配置文件" class="headerlink" title="3.配置application.yml配置文件"></a>3.配置application.yml配置文件</h5><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 80
-#端口号默认为80，可省略，作为客户端模块，应使用80省略端口<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-配置application-yml配置文件"><a href="#3-配置application-yml配置文件" class="headerlink" title="3.配置application.yml配置文件"></a>3.配置application.yml配置文件</h5><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+<span class="token comment">#端口号默认为80，可省略，作为客户端模块，应使用80省略端口</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1014,43 +1014,43 @@ mybatis:
 
 
 
-<h5 id="3-application-yml"><a href="#3-application-yml" class="headerlink" title="3.application.yml"></a>3.application.yml</h5><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 7001
+<h5 id="3-application-yml"><a href="#3-application-yml" class="headerlink" title="3.application.yml"></a>3.application.yml</h5><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">7001</span>
 
-eureka:
-  instance:
-    #eureka服务端的实例名称
-    hostname: localhost
-  client:
-    #false：表示不向注册中心注册自己
-    register-with-eureka: false
-    #false:表示自己就是注册中心，职责是维护服务实例，不需要去检索服务
-    fetch-registry: false
-    service-url:
-      #设置与EurekaServer交互的地址，查询服务和注册服务都需要依赖此地址
-      defaultZone: http:&#x2F;&#x2F;$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;&#x2F;eureka&#x2F;
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">instance</span><span class="token punctuation">:</span>
+    <span class="token comment">#eureka服务端的实例名称</span>
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> localhost
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token comment">#false：表示不向注册中心注册自己</span>
+    <span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token comment">#false:表示自己就是注册中心，职责是维护服务实例，不需要去检索服务</span>
+    <span class="token key atrule">fetch-registry</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token comment">#设置与EurekaServer交互的地址，查询服务和注册服务都需要依赖此地址</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//$<span class="token punctuation">&#123;</span>eureka.instance.hostname<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>$<span class="token punctuation">&#123;</span>server.port<span class="token punctuation">&#125;</span>/eureka/
 
-spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test?useUnicode&#x3D;true&amp;characterEncoding&#x3D;utf-8
-    username: root
-    password: &quot;0829&quot;
-    type: com.alibaba.druid.pool.DruidDataSource
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    maxPoolPreparedStatementPerConnectionSize: 20
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql&#x3D;true;druid.stat.slowSqlMillis&#x3D;500<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/test<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding=utf-</span><span class="token number">8</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"0829"</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> com.alibaba.druid.pool.DruidDataSource
+    <span class="token key atrule">initialSize</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">minIdle</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">maxActive</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">maxWait</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">timeBetweenEvictionRunsMillis</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">minEvictableIdleTimeMillis</span><span class="token punctuation">:</span> <span class="token number">300000</span>
+    <span class="token key atrule">validationQuery</span><span class="token punctuation">:</span> SELECT 1 FROM DUAL
+    <span class="token key atrule">testWhileIdle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">testOnBorrow</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">testOnReturn</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">poolPreparedStatements</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">maxPoolPreparedStatementPerConnectionSize</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">useGlobalDataSourceStat</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">connectionProperties</span><span class="token punctuation">:</span> druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1074,47 +1074,47 @@ spring:
 
 
 
-<h5 id="2-配置yml"><a href="#2-配置yml" class="headerlink" title="2.配置yml"></a>2.配置yml</h5><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#端口号
-server:
-  port: 8001
+<h5 id="2-配置yml"><a href="#2-配置yml" class="headerlink" title="2.配置yml"></a>2.配置yml</h5><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#端口号</span>
+<span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8001</span>
 
-#服务名称
-spring:
-  application:
-    name: cloud-payment-service
+<span class="token comment">#服务名称</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service
 
-  datasource:
-    #   数据源基本配置
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test?useUnicode&#x3D;true&amp;characterEncoding&#x3D;utf-8
-    username: root
-    password: &quot;0829&quot;
-    type: com.alibaba.druid.pool.DruidDataSource
-    #   数据源其他配置,默认不起作用需要手动配置
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，&#39;wall&#39;用于防火墙
-    maxPoolPreparedStatementPerConnectionSize: 20
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql&#x3D;true;druid.stat.slowSqlMillis&#x3D;500
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token comment">#   数据源基本配置</span>
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/test<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding=utf-</span><span class="token number">8</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"0829"</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> com.alibaba.druid.pool.DruidDataSource
+    <span class="token comment">#   数据源其他配置,默认不起作用需要手动配置</span>
+    <span class="token key atrule">initialSize</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">minIdle</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">maxActive</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">maxWait</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">timeBetweenEvictionRunsMillis</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">minEvictableIdleTimeMillis</span><span class="token punctuation">:</span> <span class="token number">300000</span>
+    <span class="token key atrule">validationQuery</span><span class="token punctuation">:</span> SELECT 1 FROM DUAL
+    <span class="token key atrule">testWhileIdle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">testOnBorrow</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">testOnReturn</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">poolPreparedStatements</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment">#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙</span>
+    <span class="token key atrule">maxPoolPreparedStatementPerConnectionSize</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">useGlobalDataSourceStat</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">connectionProperties</span><span class="token punctuation">:</span> druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
-eureka:
-  client:
-    #是否将自己注册进eureka server，默认为true
-    register-with-eureka: true
-    #是否从eureka server抓取已有注册信息，默认为true，单点时无所谓，集群时必须为true才能配合ribbon使用负载均衡
-    fetch-registry: true
-    service-url:
-      defaultZone: http:&#x2F;&#x2F;localhost:7001&#x2F;eureka&#x2F;
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token comment">#是否将自己注册进eureka server，默认为true</span>
+    <span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment">#是否从eureka server抓取已有注册信息，默认为true，单点时无所谓，集群时必须为true才能配合ribbon使用负载均衡</span>
+    <span class="token key atrule">fetch-registry</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>7001/eureka/
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -1149,18 +1149,18 @@ eureka:
 <h5 id="2-修改url映射文件"><a href="#2-修改url映射文件" class="headerlink" title="2.修改url映射文件"></a>2.修改url映射文件</h5><p>文件地址C:\Windows\System32\drivers\etc\hosts</p>
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6.png"></p>
 <h5 id="3-注册模块互相注册"><a href="#3-注册模块互相注册" class="headerlink" title="3.注册模块互相注册"></a>3.注册模块互相注册</h5><p>在yml配置文件中配置defaultZone，值为其他注册中心模块的url</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">eureka:
-  instance:
-    #eureka服务端的实例名称
-    hostname: eureka7001.com
-  client:
-    #false：表示不向注册中心注册自己
-    register-with-eureka: false
-    #false:表示自己就是注册中心，职责是维护服务实例，不需要去检索服务
-    fetch-registry: false
-    service-url:
-      #设置与EurekaServer交互的地址，查询服务和注册服务都需要依赖此地址
-      defaultZone: http:&#x2F;&#x2F;eureka7002.com:7002&#x2F;eureka&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">instance</span><span class="token punctuation">:</span>
+    <span class="token comment">#eureka服务端的实例名称</span>
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> eureka7001.com
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token comment">#false：表示不向注册中心注册自己</span>
+    <span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token comment">#false:表示自己就是注册中心，职责是维护服务实例，不需要去检索服务</span>
+    <span class="token key atrule">fetch-registry</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token comment">#设置与EurekaServer交互的地址，查询服务和注册服务都需要依赖此地址</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//eureka7002.com<span class="token punctuation">:</span>7002/eureka/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1170,14 +1170,14 @@ eureka:
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/e7001.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/e7002.png"></p>
 <h4 id="3-服务注册"><a href="#3-服务注册" class="headerlink" title="3.服务注册"></a>3.服务注册</h4><p>只需将注册中心的url添加都进服务模块的yml配置文件中即可</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">eureka:
-  client:
-    #是否将自己注册进eureka server，默认为true
-    register-with-eureka: true
-    #是否从eureka server抓取已有注册信息，默认为true，单点时无所谓，集群时必须为true才能配合ribbon使用负载均衡
-    fetch-registry: true
-    service-url:
-      defaultZone: http:&#x2F;&#x2F;eureka7001.com:7001&#x2F;eureka,http:&#x2F;&#x2F;eureka7002.com:7002&#x2F;eureka<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token comment">#是否将自己注册进eureka server，默认为true</span>
+    <span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment">#是否从eureka server抓取已有注册信息，默认为true，单点时无所谓，集群时必须为true才能配合ribbon使用负载均衡</span>
+    <span class="token key atrule">fetch-registry</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//eureka7001.com<span class="token punctuation">:</span>7001/eureka<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//eureka7002.com<span class="token punctuation">:</span>7002/eureka<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1186,10 +1186,10 @@ eureka:
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/e27002.png"></p>
 <h4 id="4-服务集群"><a href="#4-服务集群" class="headerlink" title="4.服务集群"></a>4.服务集群</h4><h5 id="1-创建模块-1"><a href="#1-创建模块-1" class="headerlink" title="1.创建模块"></a>1.创建模块</h5><p>集群时，相同功能模块只需要duankouhao 不同（主启动类名建议不同），其余的都相同。</p>
 <p><strong>yml配置文件中服务名必须相同</strong></p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#服务名称
-spring:
-  application:
-    name: cloud-payment-service
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#服务名称</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
@@ -1250,17 +1250,17 @@ spring:
 
 
 <h4 id="2-添加配置"><a href="#2-添加配置" class="headerlink" title="2.添加配置"></a>2.添加配置</h4><p>配置显示名称，添加<strong>instance</strong>配置</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">eureka:
-  client:
-    #是否将自己注册进eureka server，默认为true
-    register-with-eureka: true
-    #是否从eureka server抓取已有注册信息，默认为true，单点时无所谓，集群时必须为true才能配合ribbon使用负载均衡
-    fetch-registry: true
-    service-url:
-      defaultZone: http:&#x2F;&#x2F;eureka7001.com:7001&#x2F;eureka,http:&#x2F;&#x2F;eureka7002.com:7002&#x2F;eureka
-  instance:
-    instance-id: payment8001  #设置显示服务名
-    prefer-ip-address: true #访问路径显示ip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token comment">#是否将自己注册进eureka server，默认为true</span>
+    <span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment">#是否从eureka server抓取已有注册信息，默认为true，单点时无所谓，集群时必须为true才能配合ribbon使用负载均衡</span>
+    <span class="token key atrule">fetch-registry</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//eureka7001.com<span class="token punctuation">:</span>7001/eureka<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//eureka7002.com<span class="token punctuation">:</span>7002/eureka
+  <span class="token key atrule">instance</span><span class="token punctuation">:</span>
+    <span class="token key atrule">instance-id</span><span class="token punctuation">:</span> payment8001  <span class="token comment">#设置显示服务名</span>
+    <span class="token key atrule">prefer-ip-address</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment">#访问路径显示ip</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1302,11 +1302,11 @@ spring:
 <p><strong>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY’RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</strong></p>
 <p>​        代表自我保护机制开启，一个服务即使一次没有响应，短时间内Eureka也不会将其注销，等待一段时间后，如果服务进行响应，则一切继续，如果一段时间内能没有响应，则Eureka会将其注销。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/%E5%AE%89%E5%85%A8%E4%BF%9D%E6%8A%A4.png"></p>
-<h4 id="2-关闭自我保护机制"><a href="#2-关闭自我保护机制" class="headerlink" title="2.关闭自我保护机制"></a>2.关闭自我保护机制</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-    #关闭自我保护机制
-    enable-self-preservation: false
-    #设置时间间隔
-    eviction-interval-timer-in-ms: 2000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-关闭自我保护机制"><a href="#2-关闭自我保护机制" class="headerlink" title="2.关闭自我保护机制"></a>2.关闭自我保护机制</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+    <span class="token comment">#关闭自我保护机制</span>
+    <span class="token key atrule">enable-self-preservation</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token comment">#设置时间间隔</span>
+    <span class="token key atrule">eviction-interval-timer-in-ms</span><span class="token punctuation">:</span> <span class="token number">2000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1315,14 +1315,14 @@ spring:
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/%E5%85%B3%E9%97%AD%E4%BF%9D%E6%8A%A4.png"></p>
 <h4 id="3-验证"><a href="#3-验证" class="headerlink" title="3.验证"></a>3.验证</h4><p>将响应时间缩短</p>
 <p>在服务端设置</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#设置时间间隔
-eviction-interval-timer-in-ms: 2000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#设置时间间隔</span>
+<span class="token key atrule">eviction-interval-timer-in-ms</span><span class="token punctuation">:</span> <span class="token number">2000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>在客户端显示</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#服务端在收到最后一次心跳后等待的时间上限，超时注销，默认90s
-lease-expiration-duration-in-seconds: 2
-#客户端向服务端发送心跳时间间隔，默认30s
-lease-renewal-interval-in-seconds: 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#服务端在收到最后一次心跳后等待的时间上限，超时注销，默认90s</span>
+<span class="token key atrule">lease-expiration-duration-in-seconds</span><span class="token punctuation">:</span> <span class="token number">2</span>
+<span class="token comment">#客户端向服务端发送心跳时间间隔，默认30s</span>
+<span class="token key atrule">lease-renewal-interval-in-seconds</span><span class="token punctuation">:</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1349,22 +1349,22 @@ lease-renewal-interval-in-seconds: 1<span aria-hidden="true" class="line-numbers
 
 
 
-<h4 id="2-配置application-yml"><a href="#2-配置application-yml" class="headerlink" title="2.配置application.yml"></a>2.配置application.yml</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#端口号
-server:
-  port: 8004
+<h4 id="2-配置application-yml"><a href="#2-配置application-yml" class="headerlink" title="2.配置application.yml"></a>2.配置application.yml</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#端口号</span>
+<span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8004</span>
 
-#服务名称
-spring:
-  application:
-    name: cloud-payment-service
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
+<span class="token comment">#服务名称</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
         
-#使用MP还需添加数据库连接配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#使用MP还需添加数据库连接配置</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1458,44 +1458,44 @@ spring:
 
 
 
-<h6 id="2-application-yml"><a href="#2-application-yml" class="headerlink" title="2.application.yml"></a>2.application.yml</h6><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#端口号
-server:
-  port: 8004
+<h6 id="2-application-yml"><a href="#2-application-yml" class="headerlink" title="2.application.yml"></a>2.application.yml</h6><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#端口号</span>
+<span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8004</span>
 
-#服务名称
-spring:
-  application:
-    name: cloud-payment-service
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
+<span class="token comment">#服务名称</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
 
-  datasource:
-    #   数据源基本配置
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test?useUnicode&#x3D;true&amp;characterEncoding&#x3D;utf-8
-    username: root
-    password: &quot;0829&quot;
-    type: com.alibaba.druid.pool.DruidDataSource
-    #   数据源其他配置,默认不起作用需要手动配置
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，&#39;wall&#39;用于防火墙
-    maxPoolPreparedStatementPerConnectionSize: 20
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql&#x3D;true;druid.stat.slowSqlMillis&#x3D;500<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token comment">#   数据源基本配置</span>
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/test<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding=utf-</span><span class="token number">8</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"0829"</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> com.alibaba.druid.pool.DruidDataSource
+    <span class="token comment">#   数据源其他配置,默认不起作用需要手动配置</span>
+    <span class="token key atrule">initialSize</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">minIdle</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">maxActive</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">maxWait</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">timeBetweenEvictionRunsMillis</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">minEvictableIdleTimeMillis</span><span class="token punctuation">:</span> <span class="token number">300000</span>
+    <span class="token key atrule">validationQuery</span><span class="token punctuation">:</span> SELECT 1 FROM DUAL
+    <span class="token key atrule">testWhileIdle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">testOnBorrow</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">testOnReturn</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">poolPreparedStatements</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment">#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙</span>
+    <span class="token key atrule">maxPoolPreparedStatementPerConnectionSize</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">useGlobalDataSourceStat</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">connectionProperties</span><span class="token punctuation">:</span> druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -1599,43 +1599,43 @@ spring:
 
 
 
-<h6 id="2-application-yml-1"><a href="#2-application-yml-1" class="headerlink" title="2.application.yml"></a>2.application.yml</h6><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 80
+<h6 id="2-application-yml-1"><a href="#2-application-yml-1" class="headerlink" title="2.application.yml"></a>2.application.yml</h6><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
 
-#微服务名称
-spring:
-  application:
-    name: consumer-order
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
+<span class="token comment">#微服务名称</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> consumer<span class="token punctuation">-</span>order
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
 
-  datasource:
-    #   数据源基本配置
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test?useUnicode&#x3D;true&amp;characterEncoding&#x3D;utf-8
-    username: root
-    password: &quot;0829&quot;
-    type: com.alibaba.druid.pool.DruidDataSource
-    #   数据源其他配置,默认不起作用需要手动配置
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，&#39;wall&#39;用于防火墙
-    maxPoolPreparedStatementPerConnectionSize: 20
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql&#x3D;true;druid.stat.slowSqlMillis&#x3D;500
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token comment">#   数据源基本配置</span>
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/test<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding=utf-</span><span class="token number">8</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"0829"</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> com.alibaba.druid.pool.DruidDataSource
+    <span class="token comment">#   数据源其他配置,默认不起作用需要手动配置</span>
+    <span class="token key atrule">initialSize</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">minIdle</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">maxActive</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">maxWait</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">timeBetweenEvictionRunsMillis</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">minEvictableIdleTimeMillis</span><span class="token punctuation">:</span> <span class="token number">300000</span>
+    <span class="token key atrule">validationQuery</span><span class="token punctuation">:</span> SELECT 1 FROM DUAL
+    <span class="token key atrule">testWhileIdle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">testOnBorrow</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">testOnReturn</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">poolPreparedStatements</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment">#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙</span>
+    <span class="token key atrule">maxPoolPreparedStatementPerConnectionSize</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">useGlobalDataSourceStat</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">connectionProperties</span><span class="token punctuation">:</span> druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
@@ -1913,46 +1913,46 @@ spring:
 
 
 
-<h4 id="3-application-yml-1"><a href="#3-application-yml-1" class="headerlink" title="3.application.yml"></a>3.application.yml</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 80
+<h4 id="3-application-yml-1"><a href="#3-application-yml-1" class="headerlink" title="3.application.yml"></a>3.application.yml</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
 
-#微服务名称
-spring:
-  application:
-    name: consumer-order
+<span class="token comment">#微服务名称</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> consumer<span class="token punctuation">-</span>order
 
-  datasource:
-    #   数据源基本配置
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test?useUnicode&#x3D;true&amp;characterEncoding&#x3D;utf-8
-    username: root
-    password: &quot;0829&quot;
-    type: com.alibaba.druid.pool.DruidDataSource
-    #   数据源其他配置,默认不起作用需要手动配置
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，&#39;wall&#39;用于防火墙
-    maxPoolPreparedStatementPerConnectionSize: 20
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql&#x3D;true;druid.stat.slowSqlMillis&#x3D;500
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token comment">#   数据源基本配置</span>
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/test<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding=utf-</span><span class="token number">8</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"0829"</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> com.alibaba.druid.pool.DruidDataSource
+    <span class="token comment">#   数据源其他配置,默认不起作用需要手动配置</span>
+    <span class="token key atrule">initialSize</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">minIdle</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">maxActive</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">maxWait</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">timeBetweenEvictionRunsMillis</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">minEvictableIdleTimeMillis</span><span class="token punctuation">:</span> <span class="token number">300000</span>
+    <span class="token key atrule">validationQuery</span><span class="token punctuation">:</span> SELECT 1 FROM DUAL
+    <span class="token key atrule">testWhileIdle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">testOnBorrow</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">testOnReturn</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">poolPreparedStatements</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment">#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙</span>
+    <span class="token key atrule">maxPoolPreparedStatementPerConnectionSize</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">useGlobalDataSourceStat</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">connectionProperties</span><span class="token punctuation">:</span> druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
-eureka:
-  client:
-    #是否将自己注册进eureka server，默认为true
-    register-with-eureka: true
-    #是否从eureka server抓取已有注册信息，默认为true，单点时无所谓，集群时必须为true才能配合ribbon使用负载均衡
-    fetch-registry: true
-    service-url:
-      defaultZone: http:&#x2F;&#x2F;eureka7001.com:7001&#x2F;eureka,http:&#x2F;&#x2F;eureka7002.com:7002&#x2F;eureka<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token comment">#是否将自己注册进eureka server，默认为true</span>
+    <span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment">#是否从eureka server抓取已有注册信息，默认为true，单点时无所谓，集群时必须为true才能配合ribbon使用负载均衡</span>
+    <span class="token key atrule">fetch-registry</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//eureka7001.com<span class="token punctuation">:</span>7001/eureka<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//eureka7002.com<span class="token punctuation">:</span>7002/eureka<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -2046,40 +2046,40 @@ eureka:
 <p><img src="G:\笔记\SpringCloud\图片\直接访问.png"></p>
 <p><strong>通过OpenFeign访问</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/20200918210648.png"></p>
-<h4 id="2-超时设置"><a href="#2-超时设置" class="headerlink" title="2.超时设置"></a>2.超时设置</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">########################################方式一#########################################
-#设置超时时间，ribbon&#x2F;feign&#x2F;openfeign通用
-ribbon:
-  #设置建立连接后从服务器读取到可用资源所用的时间
-  ReadTimeout: 5000
-  #设置建立连接所用时间，适用于网络情况正常的情况下，两端连接所用时间
-  ConnectTimeout: 5000
+<h4 id="2-超时设置"><a href="#2-超时设置" class="headerlink" title="2.超时设置"></a>2.超时设置</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">########################################方式一#########################################</span>
+<span class="token comment">#设置超时时间，ribbon/feign/openfeign通用</span>
+<span class="token key atrule">ribbon</span><span class="token punctuation">:</span>
+  <span class="token comment">#设置建立连接后从服务器读取到可用资源所用的时间</span>
+  <span class="token key atrule">ReadTimeout</span><span class="token punctuation">:</span> <span class="token number">5000</span>
+  <span class="token comment">#设置建立连接所用时间，适用于网络情况正常的情况下，两端连接所用时间</span>
+  <span class="token key atrule">ConnectTimeout</span><span class="token punctuation">:</span> <span class="token number">5000</span>
 
-########################################方式二#########################################
-feign:
-  client:
-    config:
-      default:
-        #设置建立连接所用时间，适用于网络情况正常的情况下，两端连接所用时间
-        connectTimeout: 5000
-  		#设置建立连接后从服务器读取到可用资源所用的时间
-        readTimeout: 5000
-########################################方式三#########################################        
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 5000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">########################################方式二#########################################</span>
+<span class="token key atrule">feign</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token key atrule">config</span><span class="token punctuation">:</span>
+      <span class="token key atrule">default</span><span class="token punctuation">:</span>
+        <span class="token comment">#设置建立连接所用时间，适用于网络情况正常的情况下，两端连接所用时间</span>
+        <span class="token key atrule">connectTimeout</span><span class="token punctuation">:</span> <span class="token number">5000</span>
+  		<span class="token comment">#设置建立连接后从服务器读取到可用资源所用的时间</span>
+        <span class="token key atrule">readTimeout</span><span class="token punctuation">:</span> <span class="token number">5000</span>
+<span class="token comment">########################################方式三#########################################        </span>
+<span class="token key atrule">hystrix</span><span class="token punctuation">:</span>
+  <span class="token key atrule">command</span><span class="token punctuation">:</span>
+    <span class="token key atrule">default</span><span class="token punctuation">:</span>
+      <span class="token key atrule">execution</span><span class="token punctuation">:</span>
+        <span class="token key atrule">isolation</span><span class="token punctuation">:</span>
+          <span class="token key atrule">thread</span><span class="token punctuation">:</span>
+            <span class="token key atrule">timeoutInMilliseconds</span><span class="token punctuation">:</span> <span class="token number">5000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>结果</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/20200918210700.png"></p>
 <h3 id="4-日志增强"><a href="#4-日志增强" class="headerlink" title="4.日志增强"></a>4.日志增强</h3><p><strong>日志级别</strong></p>
 <p>NONE：默认的，不显示任何日志；<br>BASIC：仅记录请求方法、URL、响应状态码及执行时间<br>HEADERS：除了BASIC中定义的信息之外，还有请求和响应的头信息<br>FUL：除了 HEADERS中定义的信息之外，还有请求和响应的正文及元数据。</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">logging:
-  level:
-    #feign以哪个级别监视哪个包
-    com.jxy.springcloud.service: debug<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">logging</span><span class="token punctuation">:</span>
+  <span class="token key atrule">level</span><span class="token punctuation">:</span>
+    <span class="token comment">#feign以哪个级别监视哪个包</span>
+    <span class="token key atrule">com.jxy.springcloud.service</span><span class="token punctuation">:</span> debug<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -2162,9 +2162,9 @@ hystrix:
 
 <h5 id="2-配置在客户端"><a href="#2-配置在客户端" class="headerlink" title="2.配置在客户端"></a>2.配置在客户端</h5><p>1.添加依赖</p>
 <p>2.添加配置</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">feign:
-  hystrix:
-    enabled: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">feign</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hystrix</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>3.在启动类上添加注解@EnableHystrix</p>
 <p>4.在业务上进行配置，及添加保底业务(controller层)</p>
@@ -2245,9 +2245,9 @@ hystrix:
 <p><strong>3.将该实现类配置在接口中@FeignClient注解的fallback属性中</strong></p>
 <p>@FeignClient(value = “服务名”,fallback = 实现类类名.class)</p>
 <p><strong>4.配置中开启</strong></p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">feign:
-  hystrix:
-    enabled: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">feign</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hystrix</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -2339,8 +2339,8 @@ hystrix:
 
 
 <p>3.application.yml</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 9001 	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9001</span> 	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
@@ -2456,46 +2456,46 @@ hystrix:
 
 
 
-<h4 id="3-application-yml-2"><a href="#3-application-yml-2" class="headerlink" title="3.application.yml"></a>3.application.yml</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 9527
+<h4 id="3-application-yml-2"><a href="#3-application-yml-2" class="headerlink" title="3.application.yml"></a>3.application.yml</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9527</span>
 
-spring:
-  application:
-    name: cloud-gateway
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>gateway
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <h4 id="4-主启动类-1"><a href="#4-主启动类-1" class="headerlink" title="4.主启动类"></a>4.主启动类</h4><h4 id="5-配置路由"><a href="#5-配置路由" class="headerlink" title="5.配置路由"></a>5.配置路由</h4><p>方法一：配置文件配置</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 9527
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9527</span>
 
-spring:
-  application:
-    name: cloud-gateway
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
-#***********************************配置路由*****************************************#
-    gateway:
-      routes:
-        - id: payment_routh           #路由id,建议起名时与服务名相关
-          uri: http:&#x2F;&#x2F;localhost:8001  #匹配的服务地址
-          predicates:
-            - Path&#x3D;&#x2F;queryById&#x2F;**,同一uri下的路径,...      #断言，路径相匹配的进行路由
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>gateway
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
+<span class="token comment">#***********************************配置路由*****************************************#</span>
+    <span class="token key atrule">gateway</span><span class="token punctuation">:</span>
+      <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> payment_routh           <span class="token comment">#路由id,建议起名时与服务名相关</span>
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">8001</span>  <span class="token comment">#匹配的服务地址</span>
+          <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> Path=/queryById/<span class="token important">**</span><span class="token punctuation">,</span>同一uri下的路径<span class="token punctuation">,</span><span class="token punctuation">...</span>      <span class="token comment">#断言，路径相匹配的进行路由</span>
 
-        - id: id2
-          uri: uri2
-          predicates:
-            - Path&#x3D;...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> id2
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> uri2
+          <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> Path=<span class="token punctuation">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -2514,32 +2514,32 @@ spring:
 
 
 
-<h3 id="5-配置动态路由"><a href="#5-配置动态路由" class="headerlink" title="5.配置动态路由"></a>5.配置动态路由</h3><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 9527
+<h3 id="5-配置动态路由"><a href="#5-配置动态路由" class="headerlink" title="5.配置动态路由"></a>5.配置动态路由</h3><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9527</span>
 
-spring:
-  application:
-    name: cloud-gateway
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
-    gateway:
-      discovery:
-        locator:
-          enabled: true #开启从注册中心动态创建路由的功能，利用微服务名进行路由,默认为true可以省略
-      routes:
-        - id: payment_routh           #路由id,建议起名时与服务名相关
-          uri: lb:&#x2F;&#x2F;cloud-payment-service  #匹配的服务地址
-          predicates:
-            - Path&#x3D;&#x2F;queryById&#x2F;**      #断言，路径相匹配的进行路由
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>gateway
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
+    <span class="token key atrule">gateway</span><span class="token punctuation">:</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">locator</span><span class="token punctuation">:</span>
+          <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment">#开启从注册中心动态创建路由的功能，利用微服务名进行路由,默认为true可以省略</span>
+      <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> payment_routh           <span class="token comment">#路由id,建议起名时与服务名相关</span>
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> lb<span class="token punctuation">:</span>//cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service  <span class="token comment">#匹配的服务地址</span>
+          <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> Path=/queryById/<span class="token important">**</span>      <span class="token comment">#断言，路径相匹配的进行路由</span>
 
-        - id: payment_routh2
-          uri: lb:&#x2F;&#x2F;cloud-payment-service
-          predicates:
-            - Path&#x3D;&#x2F;discovery<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> payment_routh2
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> lb<span class="token punctuation">:</span>//cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service
+          <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> Path=/discovery<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -2552,17 +2552,17 @@ spring:
 <h4 id="1-After"><a href="#1-After" class="headerlink" title="1.After"></a>1.After</h4><p>The After Route Predicate Factory</p>
 <p>After路由断言工厂，其参数为ZonedDateTime日期类型，该断言匹配在指定ZonedDateTime日期时间<strong>之后</strong>发生的请求。</p>
 <p><strong>示例</strong></p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">predicates:
-	- Path&#x3D;&#x2F;queryById&#x2F;**, &#x2F;discovery     #断言，路径相匹配的进行路由
-	- After&#x3D;2020-08-09T16:42:39.095+08:00[Asia&#x2F;Shanghai]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+	<span class="token punctuation">-</span> Path=/queryById/<span class="token important">**</span><span class="token punctuation">,</span> /discovery     <span class="token comment">#断言，路径相匹配的进行路由</span>
+	<span class="token punctuation">-</span> After=2020<span class="token punctuation">-</span>08<span class="token punctuation">-</span>09T16<span class="token punctuation">:</span>42<span class="token punctuation">:</span>39.095+08<span class="token punctuation">:</span>00<span class="token punctuation">[</span>Asia/Shanghai<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>测试：</p>
 <p>42分39秒之前访问，显示404，之后访问正常</p>
 <h4 id="2-Before"><a href="#2-Before" class="headerlink" title="2.Before"></a>2.Before</h4><p>The Before Route Predicate Factory</p>
 <p>Before 路由断言工厂，其参数为ZonedDateTime日期类型，该断言匹配在指定ZonedDateTime时间<strong>之前</strong>发生的请求。</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">predicates:
-	- Path&#x3D;&#x2F;queryById&#x2F;**, &#x2F;discovery     #断言，路径相匹配的进行路由
-	- Before &#x3D;2020-08-09T16:42:39.095+08:00[Asia&#x2F;Shanghai]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+	<span class="token punctuation">-</span> Path=/queryById/<span class="token important">**</span><span class="token punctuation">,</span> /discovery     <span class="token comment">#断言，路径相匹配的进行路由</span>
+	<span class="token punctuation">-</span> Before =2020<span class="token punctuation">-</span>08<span class="token punctuation">-</span>09T16<span class="token punctuation">:</span>42<span class="token punctuation">:</span>39.095+08<span class="token punctuation">:</span>00<span class="token punctuation">[</span>Asia/Shanghai<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -2570,7 +2570,7 @@ spring:
 
 <h4 id="3-Between"><a href="#3-Between" class="headerlink" title="3.Between"></a>3.Between</h4><p>The Between Route Predicate Factory</p>
 <p>Between 路由断言工厂，其有两个参数为ZonedDateTime日期类型，该断言匹配在两个指定ZonedDateTime时间<strong>之间</strong>发生的请求。</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- Between&#x3D;2020-08-09T16:42:39.095+08:00[Asia&#x2F;Shanghai], 2020-08-09T17:42:39.095+08:00[Asia&#x2F;Shanghai]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> Between=2020<span class="token punctuation">-</span>08<span class="token punctuation">-</span>09T16<span class="token punctuation">:</span>42<span class="token punctuation">:</span>39.095+08<span class="token punctuation">:</span>00<span class="token punctuation">[</span>Asia/Shanghai<span class="token punctuation">]</span><span class="token punctuation">,</span> 2020<span class="token punctuation">-</span>08<span class="token punctuation">-</span>09T17<span class="token punctuation">:</span>42<span class="token punctuation">:</span>39.095+08<span class="token punctuation">:</span>00<span class="token punctuation">[</span>Asia/Shanghai<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -2579,9 +2579,9 @@ spring:
 <h4 id="4-Cookie"><a href="#4-Cookie" class="headerlink" title="4.Cookie"></a>4.Cookie</h4><p>The Cookie Route Predicate Factory</p>
 <p>Cookie 路由断言工厂，其有两个参数为name与正则表达式，该断言匹配具有给定名称且其值与正则表达式匹配的cookie。</p>
 <p><strong>示例</strong></p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">predicates:
-	- Path&#x3D;&#x2F;queryById&#x2F;**, &#x2F;discovery     #断言，路径相匹配的进行路由
-	- Cookie&#x3D;name,zs<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+	<span class="token punctuation">-</span> Path=/queryById/<span class="token important">**</span><span class="token punctuation">,</span> /discovery     <span class="token comment">#断言，路径相匹配的进行路由</span>
+	<span class="token punctuation">-</span> Cookie=name<span class="token punctuation">,</span>zs<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>使用curl指令测试</p>
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/20200918210817.png"></p>
@@ -2589,21 +2589,21 @@ spring:
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/20200918210822.png"></p>
 <h4 id="5-Header"><a href="#5-Header" class="headerlink" title="5.Header"></a>5.Header</h4><p>The Header Route Predicate Factory</p>
 <p><strong>示例</strong></p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">predicates:
-	- Path&#x3D;&#x2F;queryById&#x2F;**, &#x2F;discovery     #断言，路径相匹配的进行路由
-	- Header&#x3D;r-id,\d+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+	<span class="token punctuation">-</span> Path=/queryById/<span class="token important">**</span><span class="token punctuation">,</span> /discovery     <span class="token comment">#断言，路径相匹配的进行路由</span>
+	<span class="token punctuation">-</span> Header=r<span class="token punctuation">-</span>id<span class="token punctuation">,</span>\d+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>使用curl指令测试</p>
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img3/20200918210829.png"></p>
 <h4 id="6-Host"><a href="#6-Host" class="headerlink" title="6.Host"></a>6.Host</h4><p>The Host Route Predicate Factory</p>
 <p>主机</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- Host&#x3D;**.somehost.org,**.anotherhost.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> Host=<span class="token important">**.somehost.org</span><span class="token punctuation">,</span><span class="token important">**.anotherhost.org</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
 <h4 id="7-Method"><a href="#7-Method" class="headerlink" title="7.Method"></a>7.Method</h4><p>The Method Route Predicate Factory</p>
 <p>请求方法</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- Method &#x3D;POST,GET<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> Method =POST<span class="token punctuation">,</span>GET<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -2612,9 +2612,9 @@ spring:
 <h4 id="9-Query"><a href="#9-Query" class="headerlink" title="9.Query"></a>9.Query</h4><p>The Query Route Predicate Factory</p>
 <p>查询</p>
 <p>如果请求包含<code>green</code>查询参数，则前面的路由匹配。</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- Query&#x3D;green<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> Query=green<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- Query&#x3D;red, gree.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> Query=red<span class="token punctuation">,</span> gree.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -2622,13 +2622,13 @@ spring:
 
 <h4 id="10-RemoteAddr"><a href="#10-RemoteAddr" class="headerlink" title="10.RemoteAddr"></a>10.RemoteAddr</h4><p>The RemoteAddr Route Predicate Factory</p>
 <p>如果请求的远程地址为，则此路由匹配<code>192.168.1.10</code>。</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- RemoteAddr&#x3D;192.168.1.1&#x2F;24<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> RemoteAddr=192.168.1.1/24<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
 <h4 id="11-Weight"><a href="#11-Weight" class="headerlink" title="11.Weight"></a>11.Weight</h4><p>The Weight Route Predicate Factory</p>
 <p>权重</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- Weight&#x3D;group1, 2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> Weight=group1<span class="token punctuation">,</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -2710,28 +2710,28 @@ spring:
 
 
 
-<h4 id="4-application-yml"><a href="#4-application-yml" class="headerlink" title="4.application.yml"></a>4.application.yml</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 3344
+<h4 id="4-application-yml"><a href="#4-application-yml" class="headerlink" title="4.application.yml"></a>4.application.yml</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">3344</span>
 
-spring:
-  application:
-    name: cloud-config-center
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
-    config:
-      server:
-        git:
-          #git仓库地址&#x2F;经测试使用SSH会失败
-          uri: https:&#x2F;&#x2F;gitee.com&#x2F;new-rain&#x2F;SpringCloud-3.git
-          #仓库名
-          search-paths:
-          - SpringCloud-3
-      #配置文件所在分支
-      label: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>config<span class="token punctuation">-</span>center
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
+    <span class="token key atrule">config</span><span class="token punctuation">:</span>
+      <span class="token key atrule">server</span><span class="token punctuation">:</span>
+        <span class="token key atrule">git</span><span class="token punctuation">:</span>
+          <span class="token comment">#git仓库地址/经测试使用SSH会失败</span>
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//gitee.com/new<span class="token punctuation">-</span>rain/SpringCloud<span class="token punctuation">-</span>3.git
+          <span class="token comment">#仓库名</span>
+          <span class="token key atrule">search-paths</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> SpringCloud<span class="token punctuation">-</span><span class="token number">3</span>
+      <span class="token comment">#配置文件所在分支</span>
+      <span class="token key atrule">label</span><span class="token punctuation">:</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -2813,23 +2813,23 @@ spring:
 <p>Spring Cloud会创建个“ Bootstrap Context”，作为 Spring应用的 Application Context的父上下文。初始化的时候，Bootstrap<br>Context负责从外部源加载配置属性并解析配置。这两个上下文共享一个从外部获取的 Environment。</p>
 <p>Bootstrap属性有高优先级，默认情况下，它们不会被本地配置覆盖。 Bootstrap context和 Application Contex有着不同的约定<br>，所以新增了一个 bootstrap ym;文件，保证 Bootstrap Context和 Application Context配置的分离。</p>
 <p>要将 Client模块下的 application.ym;文件改为 bootstrap yml这是很关键的，<br>因为 bootstrap yml是比 application.yml先加载的。 bootstrap ym优先级高于 application.yml</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 3355
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">3355</span>
 
-spring:
-  application:
-    name: cloud-config-client
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
-    config:
-      label: master   #配置文件所在分支
-      name: config    #文件名
-      profile: dev    #后缀（环境）
-      uri: http:&#x2F;&#x2F;localhost:3344  #配置中心url<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>config<span class="token punctuation">-</span>client
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
+    <span class="token key atrule">config</span><span class="token punctuation">:</span>
+      <span class="token key atrule">label</span><span class="token punctuation">:</span> master   <span class="token comment">#配置文件所在分支</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> config    <span class="token comment">#文件名</span>
+      <span class="token key atrule">profile</span><span class="token punctuation">:</span> dev    <span class="token comment">#后缀（环境）</span>
+      <span class="token key atrule">uri</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">3344</span>  <span class="token comment">#配置中心url</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -2867,11 +2867,11 @@ spring:
 
 
 <p>2.添加监控配置</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">management:
-  endpoints:
-    web:
-      exposure:
-        include: &quot;*&quot;
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">"*"</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
@@ -2903,57 +2903,57 @@ spring:
 <h3 id="4-测试-1"><a href="#4-测试-1" class="headerlink" title="4.测试"></a>4.测试</h3><p>将数据库信息放入到config的Git中</p>
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img2/20200918211000.png"></p>
 <p>修改原本服务的yml配置文件</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#端口号
-server:
-  port: 8001
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#端口号</span>
+<span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8001</span>
 
-#服务名称
-spring:
-  application:
-    name: cloud-payment-service
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
+<span class="token comment">#服务名称</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
 
-    config:
-      label: master   #配置文件所在分支
-      name: config    #文件名
-      profile: dev    #后缀（环境）
-      uri: http:&#x2F;&#x2F;localhost:3344  #配置中心url
+    <span class="token key atrule">config</span><span class="token punctuation">:</span>
+      <span class="token key atrule">label</span><span class="token punctuation">:</span> master   <span class="token comment">#配置文件所在分支</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> config    <span class="token comment">#文件名</span>
+      <span class="token key atrule">profile</span><span class="token punctuation">:</span> dev    <span class="token comment">#后缀（环境）</span>
+      <span class="token key atrule">uri</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">3344</span>  <span class="token comment">#配置中心url</span>
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: &quot;*&quot;
+<span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">"*"</span>
 
 
-#  datasource:
-#    #   数据源基本配置
-#    driver-class-name: com.mysql.jdbc.Driver
-#    url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test?useUnicode&#x3D;true&amp;characterEncoding&#x3D;utf-8
-#    username: root
-#    password: &quot;0829&quot;
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    #   数据源其他配置,默认不起作用需要手动配置
-#    initialSize: 5
-#    minIdle: 5
-#    maxActive: 20
-#    maxWait: 60000
-#    timeBetweenEvictionRunsMillis: 60000
-#    minEvictableIdleTimeMillis: 300000
-#    validationQuery: SELECT 1 FROM DUAL
-#    testWhileIdle: true
-#    testOnBorrow: false
-#    testOnReturn: false
-#    poolPreparedStatements: true
-#    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，&#39;wall&#39;用于防火墙
-#    maxPoolPreparedStatementPerConnectionSize: 20
-#    useGlobalDataSourceStat: true
-#    connectionProperties: druid.stat.mergeSql&#x3D;true;druid.stat.slowSqlMillis&#x3D;500<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">#  datasource:</span>
+<span class="token comment">#    #   数据源基本配置</span>
+<span class="token comment">#    driver-class-name: com.mysql.jdbc.Driver</span>
+<span class="token comment">#    url: jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8</span>
+<span class="token comment">#    username: root</span>
+<span class="token comment">#    password: "0829"</span>
+<span class="token comment">#    type: com.alibaba.druid.pool.DruidDataSource</span>
+<span class="token comment">#    #   数据源其他配置,默认不起作用需要手动配置</span>
+<span class="token comment">#    initialSize: 5</span>
+<span class="token comment">#    minIdle: 5</span>
+<span class="token comment">#    maxActive: 20</span>
+<span class="token comment">#    maxWait: 60000</span>
+<span class="token comment">#    timeBetweenEvictionRunsMillis: 60000</span>
+<span class="token comment">#    minEvictableIdleTimeMillis: 300000</span>
+<span class="token comment">#    validationQuery: SELECT 1 FROM DUAL</span>
+<span class="token comment">#    testWhileIdle: true</span>
+<span class="token comment">#    testOnBorrow: false</span>
+<span class="token comment">#    testOnReturn: false</span>
+<span class="token comment">#    poolPreparedStatements: true</span>
+<span class="token comment">#    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙</span>
+<span class="token comment">#    maxPoolPreparedStatementPerConnectionSize: 20</span>
+<span class="token comment">#    useGlobalDataSourceStat: true</span>
+<span class="token comment">#    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -3011,54 +3011,54 @@ management:
 
 
 <p>2.添加配置</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#配置rabbitmq
-  rabbitmq:
-    host: 192.168.109.128
-    port: 5672
-    username: guest
-    password: guest
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#配置rabbitmq</span>
+  <span class="token key atrule">rabbitmq</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> 192.168.109.128
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">5672</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> guest
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> guest
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: &#39;bus-refresh&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">'bus-refresh'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 3344
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">3344</span>
 
-spring:
-  application:
-    name: cloud-config-center
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
-    config:
-      server:
-        git:
-          #git仓库地址&#x2F;经测试使用SSH会失败
-          uri: https:&#x2F;&#x2F;gitee.com&#x2F;new-rain&#x2F;SpringCloud-3.git
-          #仓库名
-          search-paths:
-          - SpringCloud-3
-      #配置文件所在分支
-      label: master
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>config<span class="token punctuation">-</span>center
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
+    <span class="token key atrule">config</span><span class="token punctuation">:</span>
+      <span class="token key atrule">server</span><span class="token punctuation">:</span>
+        <span class="token key atrule">git</span><span class="token punctuation">:</span>
+          <span class="token comment">#git仓库地址/经测试使用SSH会失败</span>
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//gitee.com/new<span class="token punctuation">-</span>rain/SpringCloud<span class="token punctuation">-</span>3.git
+          <span class="token comment">#仓库名</span>
+          <span class="token key atrule">search-paths</span><span class="token punctuation">:</span>
+          <span class="token punctuation">-</span> SpringCloud<span class="token punctuation">-</span><span class="token number">3</span>
+      <span class="token comment">#配置文件所在分支</span>
+      <span class="token key atrule">label</span><span class="token punctuation">:</span> master
 
-#配置rabbitmq
-  rabbitmq:
-    host: 192.168.109.128
-    port: 5672
-    username: guest
-    password: guest
+<span class="token comment">#配置rabbitmq</span>
+  <span class="token key atrule">rabbitmq</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> 192.168.109.128
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">5672</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> guest
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> guest
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: &#39;bus-refresh&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">'bus-refresh'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -3113,44 +3113,44 @@ management:
 
 
 <p>2.添加配置</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#配置rabbitmq
-  rabbitmq:
-    host: 192.168.109.128
-    port: 5672
-    username: guest
-    password: guest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#配置rabbitmq</span>
+  <span class="token key atrule">rabbitmq</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> 192.168.109.128
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">5672</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> guest
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> guest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 3355
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">3355</span>
 
-spring:
-  application:
-    name: cloud-config-client
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
-    config:
-      label: master   #配置文件所在分支
-      name: config    #文件名
-      profile: dev    #后缀（环境）
-      uri: http:&#x2F;&#x2F;localhost:3344  #配置中心url
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>config<span class="token punctuation">-</span>client
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
+    <span class="token key atrule">config</span><span class="token punctuation">:</span>
+      <span class="token key atrule">label</span><span class="token punctuation">:</span> master   <span class="token comment">#配置文件所在分支</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> config    <span class="token comment">#文件名</span>
+      <span class="token key atrule">profile</span><span class="token punctuation">:</span> dev    <span class="token comment">#后缀（环境）</span>
+      <span class="token key atrule">uri</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">3344</span>  <span class="token comment">#配置中心url</span>
 
-#配置rabbitmq
-  rabbitmq:
-    host: 192.168.109.128
-    port: 5672
-    username: guest
-    password: guest
+<span class="token comment">#配置rabbitmq</span>
+  <span class="token key atrule">rabbitmq</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> 192.168.109.128
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">5672</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> guest
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> guest
 
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: &quot;*&quot;
+<span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">"*"</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
@@ -3184,70 +3184,70 @@ management:
 
 
 
-<h4 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">zipkin:
-    base-url: http:&#x2F;&#x2F;localhost:9411
-  sleuth:
-    sampler:
-      #采样率介于0 - 1 ，1表示全部采集
-      probability: 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">zipkin</span><span class="token punctuation">:</span>
+    <span class="token key atrule">base-url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">9411</span>
+  <span class="token key atrule">sleuth</span><span class="token punctuation">:</span>
+    <span class="token key atrule">sampler</span><span class="token punctuation">:</span>
+      <span class="token comment">#采样率介于0 - 1 ，1表示全部采集</span>
+      <span class="token key atrule">probability</span><span class="token punctuation">:</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#端口号
-server:
-  port: 8001
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#端口号</span>
+<span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8001</span>
 
-#服务名称
-spring:
-  application:
-    name: cloud-payment-service
-  zipkin:
-    base-url: http:&#x2F;&#x2F;localhost:9411
-  sleuth:
-    sampler:
-      #采样率介于0 - 1 ，1表示全部采集，一般设置为0.5
-      probability: 1
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: $&#123;spring.application.name&#125;
+<span class="token comment">#服务名称</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service
+  <span class="token key atrule">zipkin</span><span class="token punctuation">:</span>
+    <span class="token key atrule">base-url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">9411</span>
+  <span class="token key atrule">sleuth</span><span class="token punctuation">:</span>
+    <span class="token key atrule">sampler</span><span class="token punctuation">:</span>
+      <span class="token comment">#采样率介于0 - 1 ，1表示全部采集，一般设置为0.5</span>
+      <span class="token key atrule">probability</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">consul</span><span class="token punctuation">:</span>
+      <span class="token key atrule">host</span><span class="token punctuation">:</span> localhost
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8500</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">service-name</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span>spring.application.name<span class="token punctuation">&#125;</span>
 
-    config:
-      label: master   #配置文件所在分支
-      name: config    #文件名
-      profile: dev    #后缀（环境）
-      uri: http:&#x2F;&#x2F;localhost:3344  #配置中心url
+    <span class="token key atrule">config</span><span class="token punctuation">:</span>
+      <span class="token key atrule">label</span><span class="token punctuation">:</span> master   <span class="token comment">#配置文件所在分支</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> config    <span class="token comment">#文件名</span>
+      <span class="token key atrule">profile</span><span class="token punctuation">:</span> dev    <span class="token comment">#后缀（环境）</span>
+      <span class="token key atrule">uri</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">3344</span>  <span class="token comment">#配置中心url</span>
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: &quot;*&quot;
+<span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">"*"</span>
 
 
-  datasource:
-    #   数据源基本配置
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test?useUnicode&#x3D;true&amp;characterEncoding&#x3D;utf-8
-    username: root
-    password: &quot;0829&quot;
-    type: com.alibaba.druid.pool.DruidDataSource
-    #   数据源其他配置,默认不起作用需要手动配置
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，&#39;wall&#39;用于防火墙
-    maxPoolPreparedStatementPerConnectionSize: 20
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql&#x3D;true;druid.stat.slowSqlMillis&#x3D;500
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token comment">#   数据源基本配置</span>
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/test<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding=utf-</span><span class="token number">8</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token string">"0829"</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> com.alibaba.druid.pool.DruidDataSource
+    <span class="token comment">#   数据源其他配置,默认不起作用需要手动配置</span>
+    <span class="token key atrule">initialSize</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">minIdle</span><span class="token punctuation">:</span> <span class="token number">5</span>
+    <span class="token key atrule">maxActive</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">maxWait</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">timeBetweenEvictionRunsMillis</span><span class="token punctuation">:</span> <span class="token number">60000</span>
+    <span class="token key atrule">minEvictableIdleTimeMillis</span><span class="token punctuation">:</span> <span class="token number">300000</span>
+    <span class="token key atrule">validationQuery</span><span class="token punctuation">:</span> SELECT 1 FROM DUAL
+    <span class="token key atrule">testWhileIdle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">testOnBorrow</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">testOnReturn</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">poolPreparedStatements</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment">#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙</span>
+    <span class="token key atrule">maxPoolPreparedStatementPerConnectionSize</span><span class="token punctuation">:</span> <span class="token number">20</span>
+    <span class="token key atrule">useGlobalDataSourceStat</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">connectionProperties</span><span class="token punctuation">:</span> druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
@@ -3301,30 +3301,30 @@ management:
 
 
 
-<h5 id="2-添加配置-1"><a href="#2-添加配置-1" class="headerlink" title="2.添加配置"></a>2.添加配置</h5><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-添加配置-1"><a href="#2-添加配置-1" class="headerlink" title="2.添加配置"></a>2.添加配置</h5><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <p><strong>完整示例</strong></p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 9001
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9001</span>
 
-spring:
-  application:
-    name: nacos-provider-payment
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> nacos<span class="token punctuation">-</span>provider<span class="token punctuation">-</span>payment
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: &#39;*&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">'*'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -3350,19 +3350,19 @@ management:
 
 
 <p>2.添加配置</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 80
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
   
-spring:
-  application:
-    name: nacos-consumer-order
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> nacos<span class="token punctuation">-</span>consumer<span class="token punctuation">-</span>order
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
 
-service-url:
-  nacos-user-service: http:&#x2F;&#x2F;nacos-provider-payment   #将服务路径配置在配置文件中，在需要时通过@Value注解引用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+  <span class="token key atrule">nacos-user-service</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//nacos<span class="token punctuation">-</span>provider<span class="token punctuation">-</span>payment   <span class="token comment">#将服务路径配置在配置文件中，在需要时通过@Value注解引用</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -3518,46 +3518,46 @@ service-url:
 <p><strong>Group：</strong>分组名</p>
 <p><strong>namespace：</strong>命名空间</p>
 <p><img src="https://cdn.jsdelivr.net/gh/new-rain/noteImage/img4/nacos-config%E9%85%8D%E7%BD%AE.png"></p>
-<h4 id="3-在服务中配置"><a href="#3-在服务中配置" class="headerlink" title="3.在服务中配置"></a>3.在服务中配置</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#bootstrap.yml
-config:
-	#作为配置中心地址
-	server-addr: localhost:8848
-	#配置文件格式
-	file-extension: yml
-	#组名
-	group: DEFAULT_GROUP
-	#命名空间
-	namespace: public<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-在服务中配置"><a href="#3-在服务中配置" class="headerlink" title="3.在服务中配置"></a>3.在服务中配置</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#bootstrap.yml</span>
+<span class="token key atrule">config</span><span class="token punctuation">:</span>
+	<span class="token comment">#作为配置中心地址</span>
+	<span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
+	<span class="token comment">#配置文件格式</span>
+	<span class="token key atrule">file-extension</span><span class="token punctuation">:</span> yml
+	<span class="token comment">#组名</span>
+	<span class="token key atrule">group</span><span class="token punctuation">:</span> DEFAULT_GROUP
+	<span class="token comment">#命名空间</span>
+	<span class="token key atrule">namespace</span><span class="token punctuation">:</span> public<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">#application.yml
-spring:
-  profiles:
-    #选择环境
-    active: test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment">#application.yml</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">profiles</span><span class="token punctuation">:</span>
+    <span class="token comment">#选择环境</span>
+    <span class="token key atrule">active</span><span class="token punctuation">:</span> test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <p><strong>示例</strong></p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 3366
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">3366</span>
 
-spring:
-  application:
-    name: cloud-nacos-config
-  cloud:
-    nacos:
-      discovery:
-        #作为服务注册中心地址
-        server-addr: localhost:8848
-      config:
-        #作为配置中心地址
-        server-addr: localhost:8848
-        #配置文件格式
-        file-extension: yml
-        #组名
-        group: DEFAULT_GROUP
-        #命名空间
-        namespace: public<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>nacos<span class="token punctuation">-</span>config
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token comment">#作为服务注册中心地址</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
+      <span class="token key atrule">config</span><span class="token punctuation">:</span>
+        <span class="token comment">#作为配置中心地址</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
+        <span class="token comment">#配置文件格式</span>
+        <span class="token key atrule">file-extension</span><span class="token punctuation">:</span> yml
+        <span class="token comment">#组名</span>
+        <span class="token key atrule">group</span><span class="token punctuation">:</span> DEFAULT_GROUP
+        <span class="token comment">#命名空间</span>
+        <span class="token key atrule">namespace</span><span class="token punctuation">:</span> public<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -3648,26 +3648,26 @@ spring:
 
 
 
-<h4 id="2-添加配置-2"><a href="#2-添加配置-2" class="headerlink" title="2.添加配置"></a>2.添加配置</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 9010
-spring:
-  application:
-    name: cloud-sentinel-service
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-    sentinel:
-      transport:
-        dashboard: localhost:8080
-        #默认8719,如被占用，加1直至可以使用
-        port: 8719
+<h4 id="2-添加配置-2"><a href="#2-添加配置-2" class="headerlink" title="2.添加配置"></a>2.添加配置</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9010</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>sentinel<span class="token punctuation">-</span>service
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
+    <span class="token key atrule">sentinel</span><span class="token punctuation">:</span>
+      <span class="token key atrule">transport</span><span class="token punctuation">:</span>
+        <span class="token key atrule">dashboard</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8080</span>
+        <span class="token comment">#默认8719,如被占用，加1直至可以使用</span>
+        <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8719</span>
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: &#39;*&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">'*'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -3892,46 +3892,46 @@ management:
 
 <p><strong>名词解释</strong></p>
 <p>resource：资源名称；<br>limitApp：来源应用；<br>grade：阈值类型，0表示线程数，1表示QPS；<br>count：单机阈值；<br>strategy：流控模式，0表示直接，1表示关联，2表示链路；<br>controlBehavior：流控效果，0表示快速失败，1表示 Warm Upρ，2表示排队等待；<br>clusterMode：是否集群。</p>
-<h4 id="3添加配置"><a href="#3添加配置" class="headerlink" title="3添加配置"></a>3添加配置</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">datasource:
-	ds1:
-		 nacos:
-            server-addr: localhost:8848
-            dataId: cloud-sentinel-service
-            groupId: DEFAULT_GROUP
-            data-type: json
-            rule-type: flow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3添加配置"><a href="#3添加配置" class="headerlink" title="3添加配置"></a>3添加配置</h4><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+	<span class="token key atrule">ds1</span><span class="token punctuation">:</span>
+		 <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+            <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
+            <span class="token key atrule">dataId</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>sentinel<span class="token punctuation">-</span>service
+            <span class="token key atrule">groupId</span><span class="token punctuation">:</span> DEFAULT_GROUP
+            <span class="token key atrule">data-type</span><span class="token punctuation">:</span> json
+            <span class="token key atrule">rule-type</span><span class="token punctuation">:</span> flow<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <p>完整配置</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
-  port: 9010
-spring:
-  application:
-    name: cloud-sentinel-service
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-    sentinel:
-      transport:
-        dashboard: localhost:8080
-        #默认8719,如被占用，加1直至可以使用
-        port: 8719
-      datasource:
-        ds1:
-          nacos:
-            server-addr: localhost:8848
-            dataId: cloud-sentinel-service
-            groupId: DEFAULT_GROUP
-            data-type: json
-            rule-type: flow
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">9010</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>sentinel<span class="token punctuation">-</span>service
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
+    <span class="token key atrule">sentinel</span><span class="token punctuation">:</span>
+      <span class="token key atrule">transport</span><span class="token punctuation">:</span>
+        <span class="token key atrule">dashboard</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8080</span>
+        <span class="token comment">#默认8719,如被占用，加1直至可以使用</span>
+        <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8719</span>
+      <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+        <span class="token key atrule">ds1</span><span class="token punctuation">:</span>
+          <span class="token key atrule">nacos</span><span class="token punctuation">:</span>
+            <span class="token key atrule">server-addr</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8848</span>
+            <span class="token key atrule">dataId</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>sentinel<span class="token punctuation">-</span>service
+            <span class="token key atrule">groupId</span><span class="token punctuation">:</span> DEFAULT_GROUP
+            <span class="token key atrule">data-type</span><span class="token punctuation">:</span> json
+            <span class="token key atrule">rule-type</span><span class="token punctuation">:</span> flow
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: &#39;*&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">'*'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
